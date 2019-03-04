@@ -1,5 +1,5 @@
 /*
- * Copyright 2002 Sun Microsystems, Inc.  All Rights Reserved.
+ * Copyright 2001-2002 Sun Microsystems, Inc.  All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -28,46 +28,33 @@
  * Copyright 2007-2015 Johannes Kinder <jk@jakstab.org>
  */
 
-package org.jakstab.asm;
+package org.jakstab.asm.z;
 
-public enum Operation {
-   // arithmetic operations
-   ADD,
-   SUB,
-   SMUL,
-   UMUL,
-   SDIV,
-   UDIV,
-   // with carry
-   ADDC,
-   SUBC,
+import org.jakstab.asm.Register;
 
-   // compare operations
-   C,
-   // logical
-   CL,
+public class ZRegister extends Register {
 
-   // logical operations
-   AND,
-   OR,
-   NOT,
-   NAND,
-   NOR, 
-   XOR,
-   XNOR,
-
-   // shift operations
-   SRL,
-   SRA,
-   SLL,
-   SLA,
+   public ZRegister(int num) {
+     super(num);
+   }
    
-   // rotate operations
-   RL,
-   RR,
-   RLC,
-   RRC,
+   public int getNumberOfRegisters() {
+     return ZRegisters.getNumberOfRegisters();
+   }
    
-   // unknown operation
-   UNKNOWN
+   public String toString() {
+       return "R" + getNumber();
+   }
+
+   public boolean isFramePointer() {
+     return false;
+   }
+
+   public boolean isStackPointer() {
+     return false;
+   }
+
+   public boolean isFloat() {
+     return false;
+   }
 }

@@ -18,6 +18,8 @@
 package org.jakstab.util;
 
 
+import java.util.ArrayList;
+
 /**
  * @author Johannes Kinder
  */
@@ -41,6 +43,29 @@ public class BinaryFileInputBuffer extends BinaryInputBuffer {
 		data = new byte[input.available()];
 		size = input.read(data);
 		input.close();
+		//txtToBinary();
+	}
+
+	//todo: this need to be removed
+	public BinaryFileInputBuffer(byte[] code)
+	{
+		data = code;
+		size = code.length;
+	}
+
+	private void txtToBinary() {
+		String[] input_string = new String[size];
+ 		for (int i = 0; i < size; i++) {
+ 			input_string[i] = "";
+			input_string[i] += (char) data[i];
+		}
+		int counter = 0;
+		for (int i = 0; i < input_string.length; i += 2) {
+ 			data[counter] = (byte) (Integer.parseInt(input_string[i], 16) * 16);
+			data[counter] += (byte) Integer.parseInt(input_string[i + 1], 16);
+			counter++;
+		}
+		size /= 2;
 	}
 
 	@Override

@@ -390,84 +390,97 @@ public class RTLOperation extends AbstractRTLExpression implements RTLExpression
 				long op2 = numericOps.get(1);
 
 				switch (this.operator) {
-				case MUL:
-					result = 1;
-					for (long x : numericOps) {
-						result *= x;
-					}
-					break;
-				case PLUS:
-					result = 0;
-					for (long x : numericOps) {
-						result += x;
-					}
-					break;
-				case AND:
-					result = -1L;
-					for (long x : numericOps) {
-						result &= x;
-					}
-					break;
-				case OR:
-					result = 0;
-					for (long x : numericOps) {
-						result |= x;
-					}
-					break;
-				case EQUAL:
-					result = op1 == op2 ? ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
-					break;
-				case LESS:
-					result = op1 < op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
-					break;
-				case LESS_OR_EQUAL:
-					result = op1 <= op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
-					break;
-				case UNSIGNED_LESS:
-					if (op1 < 0 && op2 >= 0) result = ExpressionFactory.FALSE.longValue(); 
-					else if (op2 < 0 && op1 >= 0) result = ExpressionFactory.TRUE.longValue(); 
-					else result = op1 < op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
-					break;
-				case UNSIGNED_LESS_OR_EQUAL:
-					if (op1 < 0 && op2 >= 0) result = ExpressionFactory.FALSE.longValue(); 
-					else if (op2 < 0 && op1 >= 0) result = ExpressionFactory.TRUE.longValue(); 
-					else result = op1 <= op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
-					break;
-				case SHL:
-					result = op1 << op2;
-					//logger.debug("Shift left result: " + op1 + " SHL " + op2 + " = " + result);
-					break;
-				case SHR:
-					result = (0xFFFFFFFFL & op1) >>> op2;
-					//logger.debug("Shift right result: " + op1 + " SHR " + op2 + " = " + result);
-					break;
-				case SAR:
-					result = op1 >> op2;
-					//logger.debug("Shift arithmetic right result: " + op1 + " SAR " + op2 + " = " + result);
-					break;
-				case XOR:
-					result = op1 ^ op2;
-					break;
-				case DIV:
-					// TODO: Check if this is correct
-					if (op2 != 0)
-						result = op1 / op2;
-					else
+					case MUL:
+						result = 1;
+						for (long x : numericOps) {
+							result *= x;
+						}
+						break;
+					case PLUS:
+						result = 0;
+						for (long x : numericOps) {
+							result += x;
+						}
+						break;
+					case AND:
+						result = -1L;
+						for (long x : numericOps) {
+							result &= x;
+						}
+						break;
+					case OR:
+						result = 0;
+						for (long x : numericOps) {
+							result |= x;
+						}
+						break;
+					case EQUAL:
+						result = op1 == op2 ? ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
+						break;
+					case LESS:
+						result = op1 < op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
+						break;
+					case LESS_OR_EQUAL:
+						result = op1 <= op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
+						break;
+					case UNSIGNED_LESS:
+						if (op1 < 0 && op2 >= 0) result = ExpressionFactory.FALSE.longValue();
+						else if (op2 < 0 && op1 >= 0) result = ExpressionFactory.TRUE.longValue();
+						else result = op1 < op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
+						break;
+					case UNSIGNED_LESS_OR_EQUAL:
+						if (op1 < 0 && op2 >= 0) result = ExpressionFactory.FALSE.longValue();
+						else if (op2 < 0 && op1 >= 0) result = ExpressionFactory.TRUE.longValue();
+						else result = op1 <= op2 ?  ExpressionFactory.TRUE.longValue() : ExpressionFactory.FALSE.longValue();
+						break;
+					case SLA:
+						long sign = 0x80000000L;
+						sign &= op1;
+						result = op1 << op2;
+						result &= 0x7FFFFFFFL;
+						result |= sign;
+						break;
+					case SRA:
+						if (op2 > 30)
+							result = (0x80000000L & op1) >> 31;
+						else
+							result = op1 >> op2;
+						break;
+					case SHL:
+						result = op1 << op2;
+						//logger.debug("Shift left result: " + op1 + " SHL " + op2 + " = " + result);
+						break;
+					case SHR:
+						result = (0xFFFFFFFFL & op1) >>> op2;
+						//logger.debug("Shift right result: " + op1 + " SHR " + op2 + " = " + result);
+						break;
+					case SAR:
+						result = op1 >> op2;
+						//logger.debug("Shift arithmetic right result: " + op1 + " SAR " + op2 + " = " + result);
+						break;
+					case XOR:
+						result = op1 ^ op2;
+						break;
+					case DIV:
+						// TODO: Check if this is correct
+						if (op2 != 0)
+							result = op1 / op2;
+						else
+							return ExpressionFactory.createOperation(this.operator, evaledOperands);
+						//logger.debug("Integer division: " + op1 + " DIV " + op2 + " = " + result);
+						break;
+					case MOD:
+						// TODO: Check if this is correct
+						if (op2 != 0)
+							result = op1 % op2;
+						else
+							return ExpressionFactory.createOperation(this.operator, evaledOperands);
+						//logger.debug("Integer remainder: " + op1 + " MOD " + op2 + " = " + result);
+						break;
+					default:
+						logger.info("Missing operand handler for \"" + this.operator +
+						"\"! Cannot determine numeric result in evaluation.");
 						return ExpressionFactory.createOperation(this.operator, evaledOperands);
-					//logger.debug("Integer division: " + op1 + " DIV " + op2 + " = " + result);
-					break;
-				case MOD:
-					// TODO: Check if this is correct
-					if (op2 != 0)
-						result = op1 % op2;
-					else
-						return ExpressionFactory.createOperation(this.operator, evaledOperands);
-					//logger.debug("Integer remainder: " + op1 + " MOD " + op2 + " = " + result);
-					break;
-				default:
-					logger.info("Missing operand handler for \"" + this.operator + 
-					"\"! Cannot determine numeric result in evaluation.");
-					return ExpressionFactory.createOperation(this.operator, evaledOperands);
 				}
 			}
 			
@@ -571,7 +584,7 @@ public class RTLOperation extends AbstractRTLExpression implements RTLExpression
 		case POWER_OF:
 			return operands[0].getBitWidth();
 		// Shifts
-		case SHR: case SAR: case SHL: case ROL: case ROLC: case ROR: case RORC:
+			case SHR: case SAR: case SHL: case SLA: case SRA: case ROL: case ROLC: case ROR: case RORC:
 			return operands[0].getBitWidth();
 /*			int largest = Integer.MIN_VALUE;
 			for (int i=0; i<operands.length; i++)
@@ -628,7 +641,7 @@ public class RTLOperation extends AbstractRTLExpression implements RTLExpression
 			return ExpressionFactory.createOperation(operator, typedOperands);
 		
 		// Shifting
-		case SHR: case SAR: case SHL: case ROL: case ROLC: case ROR: case RORC:
+			case SHR: case SAR: case SRA: case SLA: case SHL: case ROL: case ROLC: case ROR: case RORC:
 			typedOperands[0] = operands[0].inferBitWidth(arch, expectedBitWidth);
 			// is this always 8? no, e.g. not in bts modrm, eax. 
 			try {

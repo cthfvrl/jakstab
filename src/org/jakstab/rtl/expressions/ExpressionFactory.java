@@ -65,7 +65,8 @@ public final class ExpressionFactory {
 		sharedRegisterMap = new HashMap<RTLVariable, RTLBitRange>();
 		coveredRegs = HashMultimap.create();
 		coveredBy = HashMultimap.create();
-	
+		//Basil: change bitWidth of %pc to 24
+//		pc = createVariable("%pc", 24);
 		pc = createVariable("%pc", 32);
 		SKIP = createVariable("%SKIP", 1);
 		REPEAT = createVariable("%RPT", 1);
@@ -264,6 +265,16 @@ public final class ExpressionFactory {
 	
 	public static RTLExpression createShiftArithmeticRight(RTLExpression op1, RTLExpression op2) {
 		return createOperation(Operator.SAR, op1, op2);
+	}
+
+	//special for z/Architecture
+	public static RTLExpression createShiftRightArithmetic(RTLExpression op1, RTLExpression op2) {
+		return createOperation(Operator.SRA, op1, op2);
+	}
+
+	//special for z/Architecture
+	public static RTLExpression createShiftLeftArithmetic(RTLExpression op1, RTLExpression op2) {
+		return createOperation(Operator.SLA, op1, op2);
 	}
 	
 	public static RTLExpression createShiftLeft(RTLExpression op1, RTLExpression op2) {

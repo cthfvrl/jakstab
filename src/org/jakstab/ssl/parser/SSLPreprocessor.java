@@ -1333,7 +1333,7 @@ public SSLPreprocessor() {
 		_retTree = _t;
 	}
 	
-	public final StatementSequence  convertToRTL(AST _t) throws RecognitionException {
+	public final StatementSequence convertToRTL(AST _t) throws RecognitionException {
 		 StatementSequence statements = new StatementSequence(); ;
 		
 		AST convertToRTL_AST_in = (_t == ASTNULL) ? null : (AST)_t;

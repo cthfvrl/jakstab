@@ -59,6 +59,9 @@ public enum Operator {
 	MOD, 
 	POWER_OF,
 
+	// Bitwise arithmetic shift operations special for z/Architecture
+	SLA,
+	SRA,
 	// Bitwise shift operations
 	SHR(">>>"), 
 	SAR(">>"), /* Shift right with sign extension */

@@ -110,7 +110,8 @@ public class RTLNumber extends AbstractRTLExpression implements RTLExpression, A
 			return (value == 0L) ? "false" : "true";
 		}
 		//String bw = "<" + (bitWidth==RTLVariable.UNKNOWN_BITWIDTH ? "?" : bitWidth) + ">";
-		return Long.toString(value); //+ bw;
+		return "0x" + Long.toHexString(value).toUpperCase();
+		//return Long.toString(value); //+ bw;
 	}
 	
 	@Override

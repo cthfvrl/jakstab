@@ -37,8 +37,23 @@ public class DefaultHarness implements Harness {
 	@Override
 	public void install(Program program) {
 
-		RTLVariable esp = Program.getProgram().getArchitecture().stackPointer();
 		StatementSequence seq = new StatementSequence();
+
+		//RTLVariable r6 = ExpressionFactory.createVariable("R6", 32);
+		//seq.addLast(new RTLVariableAssignment(r6, ExpressionFactory.nondet(32)));
+		RTLVariable r13 = ExpressionFactory.createVariable("R13", 32);
+		seq.addLast(new RTLAlloc(r13, "previous_saveArea"));
+		RTLVariable r14 = ExpressionFactory.createVariable("R14", 32);
+		seq.addLast(new RTLVariableAssignment(r14, ExpressionFactory.createNumber(epilogueAddress.getValue(), 32)));
+		RTLVariable r15 = ExpressionFactory.createVariable("R15", 32);
+		seq.addLast(new RTLVariableAssignment(r15, ExpressionFactory.createNumber(program.getStart().getAddress().getValue(), 32)));
+		seq.addLast(new RTLGoto(r15, RTLGoto.Type.JUMP));
+		putSequence(program, seq, prologueAddress);
+
+		program.setEntryAddress(prologueAddress);
+
+		// Basil
+		/*RTLVariable esp = Program.getProgram().getArchitecture().stackPointer();
 		seq.addLast(new RTLVariableAssignment(1, ExpressionFactory.createVariable("%DF", 1), ExpressionFactory.FALSE));
 		seq.addLast(new RTLAlloc(esp, MemoryRegion.STACK.toString()));
 		
@@ -54,10 +69,11 @@ public class DefaultHarness implements Harness {
 
 		ILBuilder.getInstance().createPush(
 				ExpressionFactory.createNumber(epilogueAddress.getValue(), 32), seq);
+
 		seq.addLast(new RTLGoto(ExpressionFactory.createNumber(program.getStart().getAddress().getValue(), 32), RTLGoto.Type.CALL));
 		putSequence(program, seq, prologueAddress);
 		
-		program.setEntryAddress(prologueAddress);
+		program.setEntryAddress(prologueAddress);*/
 
 		// epilogue with halt statement
 		seq = new StatementSequence();

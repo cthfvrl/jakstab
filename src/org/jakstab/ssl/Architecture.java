@@ -21,6 +21,8 @@ import java.io.*;
 import java.util.*;
 
 import org.jakstab.Options;
+import org.jakstab.asm.z.*;
+import org.jakstab.translator.Translator;
 import org.jakstab.util.Logger;
 import org.jakstab.asm.*;
 import org.jakstab.asm.x86.*;
@@ -31,6 +33,7 @@ import org.jakstab.rtl.statements.*;
 import org.jakstab.ssl.parser.*;
 
 import antlr.ANTLRException;
+import org.jakstab.util.Pair;
 
 /**
  *  This class represents the physical architecture a program runs on. It is 
@@ -43,6 +46,12 @@ import antlr.ANTLRException;
 public class Architecture {
 
 	private final static Logger logger = Logger.getLogger(Architecture.class);
+
+	private static HashMap<ZOpcode, String> one_byte_table = new HashMap<>();
+	private static HashMap<ZOpcode, String> two_byte_table = new HashMap<>();
+
+	private static HashMap<ZOpcode, Pair<ZInstructionType, ZInstructionFormat>> type_and_format_Map =
+			new HashMap<>();
 
 	// Variables that can be safely forgotten when crossing instruction boundaries
 	// This should better be extracted from the SSL somehow (e.g. by making all 
@@ -72,7 +81,7 @@ public class Architecture {
 				ExpressionFactory.createVariable("tmpq3", 64),
 				ExpressionFactory.createVariable("tmpq5", 64)
 		}));
-		statusFlags = new SetOfVariables(Arrays.asList(new RTLVariable[] {
+/*		statusFlags = new SetOfVariables(Arrays.asList(new RTLVariable[] {
 				ExpressionFactory.createVariable("%AF", 1),
 				ExpressionFactory.createVariable("%CF", 1),
 				ExpressionFactory.createVariable("%C1", 1),
@@ -88,6 +97,11 @@ public class Architecture {
 				ExpressionFactory.createVariable("%PF", 1),
 				ExpressionFactory.createVariable("%SF", 1),
 				ExpressionFactory.createVariable("%ZF", 1)
+		}));*/
+		statusFlags = new SetOfVariables(Arrays.asList(new RTLVariable[]
+		{
+				ExpressionFactory.createVariable("%CC", 2),
+				ExpressionFactory.createVariable("%AM", 2)
 		}));
 	}
 
@@ -96,7 +110,8 @@ public class Architecture {
 	private Map<String, SSLInstruction> instructions;
 	private Map<String, List<SSLInstruction>> instrGroups;
 	private final RTLVariable stackPointer;
-	private final RTLVariable framePointer;
+	//Basil
+/*	private final RTLVariable framePointer;*/
 	private final RTLVariable loopCounter;
 	private final RTLVariable stringSource;
 	private final RTLVariable stringTarget;
@@ -111,13 +126,19 @@ public class Architecture {
 	 * 
 	 * @param fileName The path of the SSL file to be parsed.
 	 */
-	public Architecture(String fileName) throws FileNotFoundException, ANTLRException {
+	public Architecture(String fileName) throws FileNotFoundException, ANTLRException, IOException {
 
-		parseSSL(fileName);
+		//Basil
+		/*parseSSL(fileName);*/
+
+		parse_zArchitectureInstructionSet();
+		parse_formats_and_types();
+
 		magicInstructions = new MagicInstructions();
 		
 		stackPointer = ExpressionFactory.createVariable("%esp", 32);
-		framePointer = ExpressionFactory.createVariable("%ebp", 32);
+		//Basil
+/*		framePointer = ExpressionFactory.createVariable("%ebp", 32);*/
 		retAddrVar = ExpressionFactory.createVariable("retaddr", 32);
 		loopCounter = ExpressionFactory.createVariable("%ecx", 32);
 		stringSource = ExpressionFactory.createVariable("%esi", 32);
@@ -131,10 +152,11 @@ public class Architecture {
 	public RTLVariable returnAddressVariable() {
 		return retAddrVar;
 	}
-	
-	public RTLVariable framePointer() {
+
+	//Basil
+/*	public RTLVariable framePointer() {
 		return framePointer;
-	}
+	}*/
 	
 	public RTLVariable programCounter() {
 		return ExpressionFactory.pc;
@@ -189,6 +211,148 @@ public class Architecture {
 		"CMPS", "LODS", "MOVS", "SCAS", "STOS", "INS", "OUTS", "NOP"
 	};
 
+	private void parse_zArchitectureInstructionSet() throws IOException
+	{
+		String filename = Options.jakstabHome + "\\zArchitecture_instruction_set\\zArchitecture_one-byte_opcode_table.txt";
+		BufferedReader br = new BufferedReader(new FileReader(filename));
+
+		try
+		{
+			String line = br.readLine();
+			while (line != null)
+			{
+				one_byte_table.put(new ZOpcode((char) Integer.parseInt(line.substring(13, 15), 16)),
+						line.substring(0, 12).replace(" ", ""));
+				line = br.readLine();
+			}
+
+			br = new BufferedReader(new FileReader(
+				Options.jakstabHome + "\\zArchitecture_instruction_set\\zArchitecture_two-byte_opcode_table.txt"));
+
+			line = br.readLine();
+			while (line != null)
+			{
+				two_byte_table.put(
+						new ZOpcode((char) Integer.parseInt(line.substring(13, 17).replaceAll(" ", ""), 16)),
+						line.substring(0, 12).replace(" ", ""));
+				line = br.readLine();
+			}
+		} finally {
+			br.close();
+		}
+	}
+
+	private void parse_formats_and_types() throws IOException
+	{
+		String filename = Options.jakstabHome + "\\zArchitecture_instruction_set\\zArchitecture_formats_and_types.txt";
+		BufferedReader br = new BufferedReader(new FileReader(filename));
+
+		try
+		{
+			String line = br.readLine();
+			String[] instr_properties;
+			ZInstructionType type;
+			ZInstructionFormat format;
+			while (line != null)
+			{
+				instr_properties = line.split(" ");
+				type = ZInstructionType.parseInstructionType(instr_properties[2]);
+				format = ZInstructionFormat.parseInstructionFormat(instr_properties[3]);
+//				switch(instr_properties[2])
+//				{
+//					case "Arithmetic":
+//						type = ZInstructionType.Arithmetic;
+//						break;
+//					case "Branch":
+//						type = ZInstructionType.Branch;
+//						break;
+//					case "Load":
+//						type = ZInstructionType.Load;
+//						break;
+//					case "Move":
+//						type = ZInstructionType.Move;
+//						break;
+//					case "Store":
+//						type = ZInstructionType.Store;
+//						break;
+//					default:
+//						type = ZInstructionType.General;
+//				}
+//
+//				switch (instr_properties[3])
+//				{
+//					case "RR":
+//						format = ZInstructionFormat.RR;
+//						break;
+//					case "RRm":
+//						format = ZInstructionFormat.RRm;
+//						break;
+//					case "RSa":
+//						format = ZInstructionFormat.RSa;
+//						break;
+//					case "RSb":
+//						format = ZInstructionFormat.RSb;
+//						break;
+//					case "RSa2":
+//						format = ZInstructionFormat.RSa2;
+//						break;
+//					case "RXa":
+//						format = ZInstructionFormat.RXa;
+//						break;
+//					case "RXb":
+//						format = ZInstructionFormat.RXb;
+//						break;
+//					case "SSa":
+//						format = ZInstructionFormat.SSa;
+//						break;
+//					case "SSb":
+//						format = ZInstructionFormat.SSb;
+//						break;
+//					case "SI":
+//						format = ZInstructionFormat.SI;
+//						break;
+//					default:
+//						throw new Error("Unknown format of instruction: " + instr_properties[3]);
+//				}
+				type_and_format_Map.put(
+						new ZOpcode((char) Integer.parseInt(instr_properties[0], 16)),
+						new Pair<>(type, format));
+				line = br.readLine();
+			}
+		} finally {
+			br.close();
+		}
+	}
+
+	public static Boolean one_byte_table_contains(ZOpcode opcode) {
+		return one_byte_table.containsKey(opcode);
+	}
+
+	public static Boolean two_byte_table_contains(ZOpcode opcode) {
+		return two_byte_table.containsKey(opcode);
+	}
+
+	public static String getMnemonic(ZOpcode opcode) {
+		if (one_byte_table.containsKey(opcode))
+			return one_byte_table.get(opcode);
+		else if (two_byte_table.containsKey(opcode))
+			return two_byte_table.get(opcode);
+		throw new Error("There is now instruction with such opcode in our instruction set! opcode = " + opcode.toString());
+	}
+
+	public static ZInstructionFormat getFormat(ZOpcode opcode) {
+		if (!type_and_format_Map.containsKey(opcode))
+			throw new Error("There is now instruction with such opcode in our instruction set!" +
+					" Add it to file zArchitecture_formats_and_types.txt! opcode = " + opcode.toString());
+		return type_and_format_Map.get(opcode).getRight();
+	}
+
+	public static ZInstructionType getType(ZOpcode opcode) {
+		if (!type_and_format_Map.containsKey(opcode))
+			throw new Error("There is now instruction with such opcode in our instruction set!" +
+					" Add it to file zArchitecture_formats_and_types.txt! opcode = " + opcode.toString());
+		return type_and_format_Map.get(opcode).getLeft();
+	}
 
 	/**
 	 * Returns the name of this instruction in the SSL definitions.   
@@ -345,43 +509,51 @@ public class Architecture {
 
 		StatementSequence rtlTemplate = null;
 
-		SSLInstruction sslInstr = matchInstruction(instr);
-		if (sslInstr == null) {
-			logger.warn(address + ": No equivalent SSL instruction found for: " + instr.getName());
-		} else {
-			rtlTemplate = sslInstr.getBody();
-		}
-		Context instrParamContext = new Context();
+		if (instr instanceof ZInstruction)
+			rtlTemplate = Translator.translate((ZInstruction) instr);
 
-		boolean excessAsmOps = false;
-		if (sslInstr != null && instr.getOperandCount() > sslInstr.getParameterCount()) {
-			excessAsmOps = true;
-			logger.debug("Different number of operands for " + instr.getName() + 
-					" (" + instr.getOperandCount() + ") and " + 
-					sslInstr.toString() + " (" + sslInstr.getParameterCount() + ")!");
-			logger.debug("Unassigned operand: " + instr.getOperand(0));
-			for (int i = sslInstr.getParameterCount() + 1; i < instr.getOperandCount(); i++)
-				logger.debug("Unassigned operand: " + instr.getOperand(i).toString());
-		}
-		if (!(sslInstr == null || instr.getOperandCount() >= sslInstr.getParameterCount())) {
-			logger.error("Instruction: " + address + ": " + instr.toString(address.getValue(), DummySymbolFinder.getInstance()));
-			logger.error("Template: " + sslInstr);
-			throw new RuntimeException("Too few operands in ASM instruction for SSL template");
-		}
+		Context instrParamContext = new Context();
+		if (instr instanceof X86Instruction) {
+			SSLInstruction sslInstr = matchInstruction(instr);
+			if (sslInstr == null) {
+				logger.warn(address + ": No equivalent SSL instruction found for: " + instr.getName());
+			} else {
+				rtlTemplate = sslInstr.getBody();
+			}
+
+			boolean excessAsmOps = false;
+			if (sslInstr != null && instr.getOperandCount() > sslInstr.getParameterCount()) {
+				excessAsmOps = true;
+				logger.debug("Different number of operands for " + instr.getName() +
+						" (" + instr.getOperandCount() + ") and " +
+						sslInstr.toString() + " (" + sslInstr.getParameterCount() + ")!");
+				logger.debug("Unassigned operand: " + instr.getOperand(0));
+				for (int i = sslInstr.getParameterCount() + 1; i < instr.getOperandCount(); i++)
+					logger.debug("Unassigned operand: " + instr.getOperand(i).toString());
+			}
+			if (!(sslInstr == null || instr.getOperandCount() >= sslInstr.getParameterCount())) {
+				logger.error("Instruction: " + address + ": " + instr.toString(address.getValue(), DummySymbolFinder.getInstance()));
+				logger.error("Template: " + sslInstr);
+				throw new RuntimeException("Too few operands in ASM instruction for SSL template");
+			}
 
 		/* Transform Parameters. If there are excessive Asm operands, skip the first.
 		 * This fixes the problem with an implicit EAX operand. Might not work on other
 		 * architectures than x86! */
-		if (sslInstr != null) for (int i=0; i<sslInstr.getParameterCount(); i++) {
-			Operand iOp = excessAsmOps ? instr.getOperand(i+1) : instr.getOperand(i);
-			RTLExpression opAsExpr = ExpressionFactory.createOperand(iOp);
-			instrParamContext.substitute(sslInstr.getParameter(i), opAsExpr);
+			if (sslInstr != null) for (int i = 0; i < sslInstr.getParameterCount(); i++) {
+				Operand iOp = excessAsmOps ? instr.getOperand(i + 1) : instr.getOperand(i);
+				RTLExpression opAsExpr = ExpressionFactory.createOperand(iOp);
+				instrParamContext.substitute(sslInstr.getParameter(i), opAsExpr);
+			}
 		}
 
 		/* Assign PC - the PC value in the RTL is that of the next instruction in Intel assembly */
-		long pcValue = address.getValue(); 
-		if (instr instanceof X86Instruction) pcValue += instr.getSize();
-		instrParamContext.addAssignment(ExpressionFactory.pc, ExpressionFactory.createNumber(pcValue, ExpressionFactory.pc.getBitWidth()));
+		long pcValue = address.getValue();
+		if (instr instanceof X86Instruction || instr instanceof ZInstruction) {
+			pcValue += instr.getSize();
+			instrParamContext.addAssignment(ExpressionFactory.pc,
+					ExpressionFactory.createNumber(pcValue, ExpressionFactory.pc.getBitWidth()));
+		}
 
 		if (rtlTemplate == null) {
 			logger.debug("Null RTL body for instruction: " + instr.getName());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2002 Sun Microsystems, Inc.  All Rights Reserved.
+ * Copyright 2003 Sun Microsystems, Inc.  All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -28,46 +28,35 @@
  * Copyright 2007-2015 Johannes Kinder <jk@jakstab.org>
  */
 
-package org.jakstab.asm;
+package org.jakstab.asm.z;
 
-public enum Operation {
-   // arithmetic operations
-   ADD,
-   SUB,
-   SMUL,
-   UMUL,
-   SDIV,
-   UDIV,
-   // with carry
-   ADDC,
-   SUBC,
+import org.jakstab.asm.DataType;
+import org.jakstab.asm.Immediate;
+import org.jakstab.asm.MoveInstruction;
+import org.jakstab.asm.Operand;
+import org.jakstab.ssl.Architecture;
 
-   // compare operations
-   C,
-   // logical
-   CL,
+public class ZMoveInstruction extends ZInstruction
+implements MoveInstruction {
 
-   // logical operations
-   AND,
-   OR,
-   NOT,
-   NAND,
-   NOR, 
-   XOR,
-   XNOR,
+	public ZMoveInstruction(ZOpcode opcode, ZStorageOperand op1, Operand op2, DataType dataType) {
+		super(opcode, op1, op2, null, null, dataType);
+		ZInstructionFormat format = Architecture.getFormat(opcode);
+		if (!(format == ZInstructionFormat.SSa || format == ZInstructionFormat.SSb || format == ZInstructionFormat.SI))
+			throw new Error("Unexpected format of instruction!");
+	}
 
-   // shift operations
-   SRL,
-   SRA,
-   SLL,
-   SLA,
-   
-   // rotate operations
-   RL,
-   RR,
-   RLC,
-   RRC,
-   
-   // unknown operation
-   UNKNOWN
+	public ZMoveInstruction(ZOpcode opcode, ZStorageOperand op1, Operand op2) {
+		this(opcode, op1, op2, DataType.UNKNOWN);
+	}
+
+	@Override
+	public ZStorageOperand getMoveDestination() {
+		return (ZStorageOperand) getOperand1();
+	}
+
+	@Override
+	public Operand getMoveSource() {
+		return getOperand2();
+	}
 }
