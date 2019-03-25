@@ -337,19 +337,19 @@ public class Architecture {
 			return one_byte_table.get(opcode);
 		else if (two_byte_table.containsKey(opcode))
 			return two_byte_table.get(opcode);
-		throw new Error("There is now instruction with such opcode in our instruction set! opcode = " + opcode.toString());
+		throw new Error("There is no instruction with such opcode in our instruction set! opcode = " + opcode.toString());
 	}
 
 	public static ZInstructionFormat getFormat(ZOpcode opcode) {
 		if (!type_and_format_Map.containsKey(opcode))
-			throw new Error("There is now instruction with such opcode in our instruction set!" +
+			throw new Error("There is no instruction with such opcode in our instruction set!" +
 					" Add it to file zArchitecture_formats_and_types.txt! opcode = " + opcode.toString());
 		return type_and_format_Map.get(opcode).getRight();
 	}
 
 	public static ZInstructionType getType(ZOpcode opcode) {
 		if (!type_and_format_Map.containsKey(opcode))
-			throw new Error("There is now instruction with such opcode in our instruction set!" +
+			throw new Error("There is no instruction with such opcode in our instruction set!" +
 					" Add it to file zArchitecture_formats_and_types.txt! opcode = " + opcode.toString());
 		return type_and_format_Map.get(opcode).getLeft();
 	}

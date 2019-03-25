@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085cbe71-9d75-4bfc-ad23-6f151452c308" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Translator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Translator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="1588" lean-forward="true" selection-start-line="1588" selection-end-line="1588" />
+            <state relative-caret-position="1122">
+              <caret line="1588" selection-start-line="1588" selection-end-line="1588" />
               <folding>
                 <element signature="e#2544#5004#0" />
                 <element signature="e#2664#2720#0" />
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Architecture.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Architecture.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7922">
-              <caret line="514" selection-start-line="514" selection-end-line="514" />
+            <state relative-caret-position="527">
+              <caret line="351" column="40" lean-forward="true" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -82,6 +81,7 @@
       <find>sources</find>
       <find>branch_fall_statement</find>
       <find>condition_fa</find>
+      <find>now</find>
     </findStrings>
     <replaceStrings>
       <replace>destinations</replace>
@@ -141,9 +141,9 @@
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZStorageOperand.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/util/BinaryFileInputBuffer.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" />
       </list>
     </option>
   </component>
@@ -163,6 +163,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -193,7 +194,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -729,34 +729,34 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="z/OS" order="4" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5058565" side_tool="true" weight="0.3055118" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27005348" />
       <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27005348" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19463088" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19731544" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42513368" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42513368" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Statistic" order="11" weight="0.32913387" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Database" order="9" />
       <window_info anchor="right" id="Properties" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
-      <window_info anchor="right" id="Database" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1095,13 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7922">
-          <caret line="514" selection-start-line="514" selection-end-line="514" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/AbstractRTLStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -1125,8 +1118,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="1588" lean-forward="true" selection-start-line="1588" selection-end-line="1588" />
+        <state relative-caret-position="1122">
+          <caret line="1588" selection-start-line="1588" selection-end-line="1588" />
           <folding>
             <element signature="e#2544#5004#0" />
             <element signature="e#2664#2720#0" />
@@ -1146,6 +1139,13 @@
             <element signature="e#38693#38752#0" />
             <element signature="e#40771#42322#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="351" column="40" lean-forward="true" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
         </state>
       </provider>
     </entry>
