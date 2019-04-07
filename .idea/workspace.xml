@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085cbe71-9d75-4bfc-ad23-6f151452c308" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/bin/vmcai12/demo1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/bin/vmcai_demo.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,12 +16,47 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1334419229">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.compare" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="187" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="187" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Translator.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
+            <state relative-caret-position="547">
               <caret line="1588" selection-start-line="1588" selection-end-line="1588" />
               <folding>
                 <element signature="e#2544#5004#0" />
@@ -46,20 +81,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RTLGoto.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLGoto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="-665">
               <caret line="50" selection-start-line="50" selection-end-line="50" />
+              <folding>
+                <element signature="e#1787#1788#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Architecture.java" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="351" column="40" lean-forward="true" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
+              <caret line="351" column="40" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="245" column="63" selection-start-line="245" selection-start-column="63" selection-end-line="245" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#8676#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,6 +132,7 @@
       <find>branch_fall_statement</find>
       <find>condition_fa</find>
       <find>now</find>
+      <find>Raw</find>
     </findStrings>
     <replaceStrings>
       <replace>destinations</replace>
@@ -89,6 +140,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HlasmTools.ProjectComponent">
+    <option name="HIGHLIGHT" value="false" />
+    <option name="FILTER_WHITESPACE" value="false" />
+    <option name="SHOW_PROPERTIES" value="true" />
+    <option name="SPLIT_DIVIDER_POSITION" value="300" />
+    <option name="AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
+    <option name="TOOL_NAME" value="ListingViewer" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -141,9 +201,9 @@
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZStorageOperand.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/util/BinaryFileInputBuffer.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java" />
       </list>
     </option>
   </component>
@@ -163,8 +223,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,13 +254,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&quot;Exception on inferring type&quot;&#9;null&#9;null&#10;Exception on inferring type&#9;null&#9;null&#10;first bit inde&#9;PSI&#9;JAVA://org.jakstab.rtl.expressions.RTLBitRange#getFirstBitIndex" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554634456679" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -230,197 +290,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.IGG019LC">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-    </configuration>
-    <configuration name="IGG019KG" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KG.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="IGG019KU" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KU.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="IGG019LC" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m &quot;D:\SPbSU\Term paper\jakstab-diploma\my_tests\IGG019LC&quot; --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="bctrloop" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\bctrloop --cpa xf --graphML" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="csect2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\csect2 --cpa xf --graphML" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="igg019ku" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg019ku --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="igg0201p" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg0201p --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="prolepil" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\prolepil --cpa xf --graphML" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="test_basr_to_subroutine" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_basr_to_subroutine.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_bctr_loop" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_bctr_loop.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_branch_between_csects" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_branch_between_csects.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_explicit_initialized_memory_switch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_explicit_initialized_memory_switch.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_guarded_branch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_branch.txt --cpa xf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_guarded_target_switch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_target_switch.txt --cpa xcfi" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_indirect_jump_ariphm" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_indirect_jump_ariphm.exe" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_memory_switch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_memory_switch.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_prologue_epilogue" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_prologue_epilogue.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration name="test_switch_static_displacement" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_switch_static_displacement.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -631,6 +500,168 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IGG019KG" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KG.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IGG019KU" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KU.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IGG019LC" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m &quot;D:\SPbSU\Term paper\jakstab-diploma\my_tests\IGG019LC&quot; --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bctrloop" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\bctrloop --cpa xf --graphML" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="csect2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\csect2 --cpa xf --graphML" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="igg019ku" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg019ku --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="igg0201p" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg0201p --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="prolepil" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\prolepil --cpa xf --graphML" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_basr_to_subroutine" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_basr_to_subroutine.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_bctr_loop" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_bctr_loop.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_branch_between_csects" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_branch_between_csects.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_explicit_initialized_memory_switch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_explicit_initialized_memory_switch.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_guarded_branch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_branch.txt --cpa xf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_guarded_target_switch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_target_switch.txt --cpa xcfi" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_indirect_jump_ariphm" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_indirect_jump_ariphm.exe" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_memory_switch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_memory_switch.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_prologue_epilogue" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_prologue_epilogue.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_switch_static_displacement" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_switch_static_displacement.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.test_indirect_jump_ariphm" />
       <item itemvalue="Application.test_prologue_epilogue" />
@@ -723,40 +754,43 @@
     <option name="totallyTimeSpent" value="403388000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="z/OS" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info id="Image Layers" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5058565" side_tool="true" weight="0.3055118" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27005348" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19731544" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19731544" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42513368" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Statistic" order="11" weight="0.32913387" />
-      <window_info id="Nl-Palette" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Database" order="9" />
-      <window_info anchor="right" id="Properties" order="5" />
+      <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27005348" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42513368" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5058565" side_tool="true" weight="0.3055118" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
+      <window_info anchor="bottom" id="Statistic" order="11" weight="0.32913387" />
+      <window_info anchor="right" id="HlasmTools" />
+      <window_info anchor="right" id="JES" />
+      <window_info anchor="right" id="SCLM" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="z/OS" order="5" />
+      <window_info anchor="right" id="Properties" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Database" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -783,15 +817,30 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="138" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
+  <component name="com.dellemc.hlasm_language.settings.HlasmSettingsProjectComponent">
+    <option name="START_BREADCRUMBS" value="CSECT,RSECT,PGMBEGIN,RTNBEGIN" />
+    <option name="END_BREADCRUMBS" value="PGMEND,RTNEND" />
+    <option name="WORK_BREADCRUMBS" value="DSECT,WORKSTG,CONSTG" />
+    <option name="CARD_PANEL" value="Breadcrumbs" />
+    <option name="listSheme" value="*.LISTLIB" />
+    <option name="parseTreeLV" value="false" />
+    <option name="parseTreeBC" value="true" />
+    <option name="ROUTINE_STRUCTURE" value="PGMBEGIN,RTNBEGIN" />
+    <option name="EXTERNAL_CALL" value="CALL,ATTACH,@QCSCALL,@QCSTASK,BALR" />
+    <option name="INTERNAL_CALL" value="CALLRTN" />
+    <option name="START_GRAFCALL" value="PGMBEGIN,RTNBEGIN" />
+    <option name="END_GRAFCALL" value="PGMEND,RTNEND" />
+    <option name="PATH_DOT_EXE" value="" />
+    <option name="BRS_An" value="true" />
+    <option name="L_An" value="true" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JAVA/org.jakstab.translator.Translator" />
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/analysis/explicit/BasedNumberValuation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1088,13 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="267" selection-start-line="267" selection-end-line="267" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/AbstractRTLStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -1109,16 +1151,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLGoto.java">
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/loader/ExecutableImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="594">
+          <caret line="161" column="18" selection-start-line="161" selection-start-column="18" selection-end-line="161" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
+        <state relative-caret-position="547">
           <caret line="1588" selection-start-line="1588" selection-end-line="1588" />
           <folding>
             <element signature="e#2544#5004#0" />
@@ -1142,10 +1184,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLGoto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#1787#1788#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="351" column="40" lean-forward="true" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
+          <caret line="351" column="40" selection-start-line="351" selection-start-column="40" selection-end-line="351" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="245" column="63" selection-start-line="245" selection-start-column="63" selection-end-line="245" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#8676#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
