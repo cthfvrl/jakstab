@@ -135,7 +135,7 @@ public class ZDisassembler implements Disassembler {
 						throw new Error("Invalid value of mask!");
 				}
 			}
-			if (format == ZInstructionFormat.RXa && type != ZInstructionType.Branch && mnemonic.equals("EX") && !mnemonic.equals("LA")) {
+			if (format == ZInstructionFormat.RXa && type != ZInstructionType.Branch && !mnemonic.equals("EX") && !mnemonic.equals("LA")) {
 				switch (mnemonic) {
 					case "IC":
 					case "STC":
