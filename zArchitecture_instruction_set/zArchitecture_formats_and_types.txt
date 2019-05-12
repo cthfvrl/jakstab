@@ -46,3 +46,4 @@ B20A SPKA General S
 54 N Arithmetic RXa
 49 CH Arithmetic RXa
 A75 BRAS Branch RI
+BA CS Arithmetic RSa

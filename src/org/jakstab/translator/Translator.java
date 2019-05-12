@@ -497,6 +497,7 @@ public class Translator {
                         break;
                     }
                 }
+                break;
             }
         }
         return instructionBody;
@@ -695,72 +696,6 @@ public class Translator {
         }
         return instructionBody;
     }
-
-//    private static RTLExpression getCondition(ZMask mask)
-//    {
-//        RTLExpression condition;
-//        switch (mask.getValue())
-//        {
-//            //Branch (unconditional)
-//            case 15:
-//                condition = TRUE;
-//                break;
-//
-//            //Branch on Not Overflow
-//            //OF == 0
-//            case 14:
-//                condition = ExpressionFactory.createEqual(of, FALSE);
-//                break;
-//
-//            //Branch on Not High (less or equal)
-//            //ZF == 1 or SF != OF
-//            case 13:
-//                condition = ExpressionFactory.createOr(ExpressionFactory.createEqual(zf, TRUE),
-//                        ExpressionFactory.createNotEqual(sf, of));
-//                break;
-//
-//            //Branch on Not Less (greater or equal)
-//            //SF == OF
-//            case 11:
-//                condition = ExpressionFactory.createEqual(sf, of);
-//                break;
-//
-//            //Branch on Equal
-//            //ZF == 1
-//            case 8:
-//                condition = ExpressionFactory.createEqual(zf, TRUE);
-//                break;
-//
-//            //Branch on Not Equal
-//            //ZF == 0
-//            case 7:
-//                condition = ExpressionFactory.createEqual(zf, FALSE);
-//                break;
-//
-//            //Branch on Low
-//            //SF != OF
-//            case 4:
-//                condition = ExpressionFactory.createNotEqual(sf, zf);
-//                break;
-//
-//            //Branch on High
-//            //ZF == 0 and SF == OF
-//            case 2:
-//                condition = ExpressionFactory.createAnd(ExpressionFactory.createEqual(zf, FALSE),
-//                        ExpressionFactory.createEqual(sf, of));
-//                break;
-//
-//            //Branch on Overflow
-//            //OF == 1
-//            case 1:
-//                condition = ExpressionFactory.createEqual(of, TRUE);
-//                break;
-//
-//            default:
-//                condition = null;
-//        }
-//        return condition;
-//    }
 
     private static RTLExpression getCondition(ZMask mask) {
         RTLExpression condition;
@@ -1090,6 +1025,23 @@ public class Translator {
         String mnemonic = instruction.getMnemonic();
         switch (instruction.getType()) {
             case Arithmetic: {
+                switch (mnemonic) {
+                    case "CS": {
+                        // TODO:
+                        compareFlagsAssignment(instructionBody, register_operand1, storage_operand);
+                        RTLExpression condition = ExpressionFactory.createEqual(register_operand1, storage_operand);
+
+                        RTLExpression conditional_storage_value = ExpressionFactory.createConditionalExpression(condition, register_operand3, storage_operand);
+                        storage_assignment_statement = new RTLMemoryAssignment(storage_operand, conditional_storage_value);
+                        instructionBody.addLast(storage_assignment_statement);
+
+                        RTLExpression conditional_register1_value = ExpressionFactory.createConditionalExpression(condition, register_operand1, storage_operand);
+                        register_assignment_statement = new RTLVariableAssignment(register_operand1, conditional_register1_value);
+                        instructionBody.addLast(register_assignment_statement);
+
+                        break;
+                    }
+                }
                 break;
             }
             case Branch: {
