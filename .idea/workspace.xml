@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085cbe71-9d75-4bfc-ad23-6f151452c308" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,120 +57,163 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="65" column="58" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="58" />
-              <folding>
-                <element signature="e#2664#2720#0" />
-                <element signature="e#5010#5501#0" />
-                <element signature="e#5507#6404#0" />
-                <element signature="e#6410#8005#0" />
-                <element signature="e#8011#9614#0" />
-                <element signature="e#9620#10308#0" />
-                <element signature="e#10314#10956#0" />
-                <element signature="e#10962#11626#0" />
-                <element signature="e#11632#12170#0" />
-                <element signature="e#12176#12952#0" />
-                <element signature="e#12958#13151#0" />
-                <element signature="e#13157#14075#0" />
-                <element signature="e#14081#14854#0" />
-                <element signature="e#14856#14955#0" />
-                <element signature="e#38693#38752#0" />
-                <element signature="e#40771#42322#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZArithmeticInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLGoto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-              <folding>
-                <element signature="e#1787#1788#0" expanded="true" />
-                <element signature="e#1840#1841#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="404" column="62" selection-start-line="404" selection-start-column="62" selection-end-line="404" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="369" column="33" lean-forward="true" selection-start-line="369" selection-start-column="33" selection-end-line="369" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="512" column="20" lean-forward="true" selection-start-line="512" selection-start-column="20" selection-end-line="512" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="247" column="54" selection-start-line="247" selection-start-column="54" selection-end-line="247" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="247" column="17" lean-forward="true" selection-start-line="247" selection-start-column="17" selection-end-line="247" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.45812395">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Translator.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="65" column="58" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="58" />
+                  <folding>
+                    <element signature="e#2664#2720#0" />
+                    <element signature="e#5010#5501#0" />
+                    <element signature="e#5507#6404#0" />
+                    <element signature="e#6410#8005#0" />
+                    <element signature="e#8011#9614#0" />
+                    <element signature="e#9620#10308#0" />
+                    <element signature="e#10314#10956#0" />
+                    <element signature="e#10962#11626#0" />
+                    <element signature="e#11632#12170#0" />
+                    <element signature="e#12176#12952#0" />
+                    <element signature="e#12958#13151#0" />
+                    <element signature="e#13157#14075#0" />
+                    <element signature="e#14081#14854#0" />
+                    <element signature="e#14856#14955#0" />
+                    <element signature="e#38693#38752#0" />
+                    <element signature="e#40771#42322#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="zArchitecture_formats_and_types.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="561">
+                  <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZRIDecoder.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZRIInstruction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZSIInstruction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZSIInstruction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="109">
+                  <caret line="315" selection-start-line="315" selection-end-line="315" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Architecture.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="343">
+                  <caret line="351" selection-start-line="351" selection-end-line="351" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="420" selection-start-line="420" selection-end-line="420" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ProgramGraphWriter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/ProgramGraphWriter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="458" column="13" lean-forward="true" selection-start-line="458" selection-start-column="13" selection-end-line="458" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="ZSIInstruction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZSIInstruction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZRRInstruction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRRInstruction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZInstructionFormat.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZSIDecoder.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSIDecoder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ZRRDecoder.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRRDecoder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -190,11 +237,13 @@
       <find>ZInstruction</find>
       <find>getInstruction</find>
       <find>nodes</find>
-      <find>getStatement</find>
       <find>getRTLEquivalent</find>
       <find>RTLStatement</find>
       <find>putInstruction</find>
       <find>newGeneralInstruction</find>
+      <find>Control flow from</find>
+      <find>Exception on inferring type of first</find>
+      <find>getStatement</find>
     </findStrings>
     <replaceStrings>
       <replace>destinations</replace>
@@ -215,9 +264,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/jakstab/asm/Operation.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZRegisters.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZOpcode.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/ssl/parser/SSLPreprocessor.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZStoreInstruction.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZLoadInstruction.java" />
@@ -255,7 +301,6 @@
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSSbDecoder.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZIDecoder.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSDecoder.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactory.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstruction.java" />
@@ -266,6 +311,10 @@
         <option value="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" />
+        <option value="$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java" />
       </list>
     </option>
   </component>
@@ -275,7 +324,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1090" />
@@ -285,6 +334,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,29 +358,27 @@
               <item name="jakstab" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jakstab" type="462c0819:PsiDirectoryNode" />
-              <item name="asm" type="462c0819:PsiDirectoryNode" />
+              <item name="disasm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jakstab" type="b2602c69:ProjectViewProjectNode" />
               <item name="jakstab" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jakstab" type="462c0819:PsiDirectoryNode" />
-              <item name="asm" type="462c0819:PsiDirectoryNode" />
+              <item name="disasm" type="462c0819:PsiDirectoryNode" />
               <item name="z" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jakstab" type="b2602c69:ProjectViewProjectNode" />
               <item name="jakstab" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jakstab" type="462c0819:PsiDirectoryNode" />
-              <item name="ssl" type="462c0819:PsiDirectoryNode" />
+              <item name="zArchitecture_instruction_set" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,7 +414,177 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.IGG019LC">
+  <component name="RunManager" selected="Application.test">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IGG019KG" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KG.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="IGG019KU" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KU.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="IGG019LC" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m &quot;D:\SPbSU\Term paper\jakstab-diploma\my_tests\IGG019LC&quot; --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bctrloop" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\bctrloop --cpa xf --graphML" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="csect2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\csect2 --cpa xf --graphML" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="igg019ku" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg019ku --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="igg0201p" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg0201p --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="prolepil" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\prolepil --cpa xf --graphML" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m &quot;D:\SPbSU\Term paper\tests\user&quot; --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_basr_to_subroutine" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_basr_to_subroutine.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_bctr_loop" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_bctr_loop.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_branch_between_csects" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_branch_between_csects.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_explicit_initialized_memory_switch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_explicit_initialized_memory_switch.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_guarded_branch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_branch.txt --cpa xf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_guarded_target_switch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_target_switch.txt --cpa xcfi" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_indirect_jump_ariphm" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_indirect_jump_ariphm.exe" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_memory_switch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_memory_switch.txt --cpa xcf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_prologue_epilogue" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_prologue_epilogue.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test_switch_static_displacement" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
+      <module name="jakstab-diploma" />
+      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_switch_static_displacement.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -577,168 +795,6 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IGG019KG" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KG.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="IGG019KU" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\IGG019KU.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="IGG019LC" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m &quot;D:\SPbSU\Term paper\jakstab-diploma\my_tests\IGG019LC&quot; --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="bctrloop" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\bctrloop --cpa xf --graphML" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="csect2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\csect2 --cpa xf --graphML" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="igg019ku" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg019ku --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="igg0201p" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\igg0201p --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="prolepil" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\prolepil --cpa xf --graphML" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test_basr_to_subroutine" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_basr_to_subroutine.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_bctr_loop" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_bctr_loop.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_branch_between_csects" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_branch_between_csects.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_explicit_initialized_memory_switch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_explicit_initialized_memory_switch.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_guarded_branch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_branch.txt --cpa xf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_guarded_target_switch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_guarded_target_switch.txt --cpa xcfi" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_indirect_jump_ariphm" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_indirect_jump_ariphm.exe" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_memory_switch" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_memory_switch.txt --cpa xcf" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_prologue_epilogue" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_prologue_epilogue.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_switch_static_displacement" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.jakstab.Main" />
-      <module name="jakstab-diploma" />
-      <option name="PROGRAM_PARAMETERS" value="-m my_tests\test_switch_static_displacement.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.test_indirect_jump_ariphm" />
       <item itemvalue="Application.test_prologue_epilogue" />
@@ -752,6 +808,7 @@
       <item itemvalue="Application.test_branch_between_csects" />
       <item itemvalue="Application.IGG019KG" />
       <item itemvalue="Application.IGG019LC" />
+      <item itemvalue="Application.test" />
       <item itemvalue="Application.IGG019KU" />
       <item itemvalue="Application.csect2" />
       <item itemvalue="Application.bctrloop" />
@@ -830,45 +887,90 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="403388000" />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22080536" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Nl-Palette" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32909605" />
+      <window_info anchor="right" id="z/OS" order="5" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27005348" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42513368" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5058565" side_tool="true" weight="0.3055118" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.10310735" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
-      <window_info anchor="bottom" id="Statistic" order="11" weight="0.32913387" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="z/OS" order="5" />
-      <window_info anchor="right" id="Properties" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Database" order="10" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42372882" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" id="HlasmTools" order="11" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Statistic" order="11" weight="0.32913387" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Database" order="10" />
+      <window_info anchor="right" id="Properties" order="6" />
       <window_info anchor="right" id="JES" order="12" />
       <window_info anchor="right" id="SCLM" order="13" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="4" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="HlasmTools" order="11" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.10310735" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="right" id="Properties" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5058565" side_tool="true" weight="0.3055118" />
+      <window_info anchor="bottom" id="Statistic" order="11" weight="0.32913387" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="JES" order="12" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22416107" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
+      <window_info anchor="right" id="Database" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32909605" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="z/OS" order="5" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="SCLM" order="13" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42372882" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -890,10 +992,36 @@
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java</url>
+          <line>344</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java</url>
+          <line>339</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="index == 168" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java</url>
+          <line>351</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -917,99 +1045,17 @@
     <option name="BRS_An" value="true" />
     <option name="L_An" value="true" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>index == 168</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/AssignmentTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/expressions/RTLExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRRmDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRSa2Decoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRXbDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSIDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSSaDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSSbDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRXaDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRSaDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/Immediate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/org.jakstab.asm.Immediate" />
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRRDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRSbDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1028,13 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/expressions/RTLBitRange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="291" selection-start-line="291" selection-end-line="291" />
         </state>
       </provider>
     </entry>
@@ -1115,20 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZOperandsDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/util/BinaryInputBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1166,8 +1191,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="247" column="17" lean-forward="true" selection-start-line="247" selection-start-column="17" selection-end-line="247" selection-end-column="17" />
+        <state relative-caret-position="3502">
+          <caret line="247" column="17" selection-start-line="247" selection-start-column="17" selection-end-line="247" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1189,10 +1214,164 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLGoto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="242" column="6" selection-start-line="242" selection-start-column="6" selection-end-line="242" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/Disassembler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZArithmeticInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/cfa/AlternatingStateTransformerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="152" column="37" selection-start-line="152" selection-start-column="37" selection-end-line="152" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/ProgramGraphWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="458" column="13" lean-forward="true" selection-start-line="458" selection-start-column="13" selection-end-line="458" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/expressions/RTLBitRange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="291" column="25" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="247" column="54" selection-start-line="247" selection-start-column="54" selection-end-line="247" selection-end-column="54" />
+        <state relative-caret-position="119">
+          <caret line="420" selection-start-line="420" selection-end-line="420" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/analysis/ControlFlowReconstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/analysis/CPAAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/cfa/ResolvingTransformerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="315" selection-start-line="315" selection-end-line="315" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="351" selection-start-line="351" selection-end-line="351" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRSa2Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZSIInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRRInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZOperandsDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1221,77 +1400,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLStatement.java">
+    <entry file="file://$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="561">
+          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/rtl/statements/RTLGoto.java">
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRRDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        <state relative-caret-position="221">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSIDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1840#1841#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="512" column="20" lean-forward="true" selection-start-line="512" selection-start-column="20" selection-end-line="512" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="242" column="6" selection-start-line="242" selection-start-column="6" selection-end-line="242" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/Disassembler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="404" column="62" selection-start-line="404" selection-start-column="62" selection-end-line="404" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZArithmeticInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="369" column="33" lean-forward="true" selection-start-line="369" selection-start-column="33" selection-end-line="369" selection-end-column="33" />
         </state>
       </provider>
     </entry>

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Created by Basil on 06.04.2017.
  */
 public enum ZInstructionFormat {
-    RR(2, 2, (new ZRegister(-1).getClass()), (new ZRegister(-1)).getClass(), null, null,
+    RR(2, 2, (new ZRegister(-1)).getClass(), (new ZRegister(-1)).getClass(), null, null,
             new ZRRDecoder()),
     RSa(4, 3, (new ZRegister(-1)).getClass(), (new ZStorageOperand(-1, null, -1)).getClass(),
             (new ZRegister(-1)).getClass(), null, new ZRSaDecoder()),
@@ -33,7 +33,8 @@ public enum ZInstructionFormat {
     RRm(2, 2, (new ZMask(0)).getClass(), (new ZRegister(-1)).getClass(), null, null, new ZRRmDecoder()),
     // Special for SLA, SLDA, SLDL, SLL, SRA, SRDA, SRDL, SRL instructions
     RSa2(4, 2, (new ZRegister(-1)).getClass(), (new ZStorageOperand(-1, null, -1)).getClass(),
-            null, null, new ZRSa2Decoder());
+            null, null, new ZRSa2Decoder()),
+    RI(4, 2, (new ZRegister(-1)).getClass(), (new Immediate(-1, DataType.INT16)).getClass(), null, null, new ZRIDecoder());
 
 
     private int size;
