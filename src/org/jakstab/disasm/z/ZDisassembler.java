@@ -316,6 +316,9 @@ public class ZDisassembler implements Disassembler {
 						case RRm:
 							instruction = factory.newBranchInstruction(opcode, (ZMask) operands[0], (ZRegister) operands[1]);
 							break;
+						case RI:
+							instruction = factory.newBranchInstruction(opcode, (ZRegister) operands[0], (Immediate) operands[1]);
+							break;
 						default:
 							throw new Error("Invalid format for Branch instruction!");
 					}

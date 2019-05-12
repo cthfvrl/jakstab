@@ -30,6 +30,7 @@
 
 package org.jakstab.asm.z;
 
+import org.jakstab.asm.Immediate;
 import org.jakstab.asm.Operand;
 import org.jakstab.asm.Operation;
 
@@ -54,6 +55,10 @@ public class ZInstructionFactoryImpl implements ZInstructionFactory {
 	}
 
 	public ZInstruction newBranchInstruction(ZOpcode opcode, ZMask op1, ZRegister op2) {
+		return new ZBranchInstruction(opcode, op1, op2);
+	}
+
+	public ZInstruction newBranchInstruction(ZOpcode opcode, ZRegister op1, Immediate op2) {
 		return new ZBranchInstruction(opcode, op1, op2);
 	}
 

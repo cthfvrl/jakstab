@@ -15,20 +15,22 @@ import java.util.ArrayList;
 public class Translator {
 
     private static final RTLNumber[] rtl_number = new RTLNumber[64];
-    static
-    {
+
+    static {
         for (int i = 0; i < 64; i++)
             rtl_number[i] = ExpressionFactory.createNumber(i);
     }
+
     private static final RTLNumber[] rtl_number_8bit = new RTLNumber[64];
-    static
-    {
+
+    static {
         for (int i = 0; i < 64; i++) {
             rtl_number_8bit[i] = ExpressionFactory.createNumber(i);
             rtl_number_8bit[i] =
                     rtl_number_8bit[i].bitExtract(rtl_number_8bit[i].getBitWidth() - 8, rtl_number_8bit[i].getBitWidth() - 1);
         }
     }
+
     private static final RTLNumber minus_one = ExpressionFactory.createNumber(-1);
     private static int getmain_storage_count = 0;
 
@@ -51,20 +53,19 @@ public class Translator {
     //Condition Code
     private static final RTLBitRange cc = ExpressionFactory.createBitRange(psw, rtl_number[18], rtl_number[19]);
     private static final RTLNumber[] cc_value = new RTLNumber[]
-    {
-            ExpressionFactory.createNumber(0, 2),
-            ExpressionFactory.createNumber(1, 2),
-            ExpressionFactory.createNumber(-2, 2),
-            ExpressionFactory.createNumber(-1, 2)
-    };
+            {
+                    ExpressionFactory.createNumber(0, 2),
+                    ExpressionFactory.createNumber(1, 2),
+                    ExpressionFactory.createNumber(-2, 2),
+                    ExpressionFactory.createNumber(-1, 2)
+            };
 
     public static final RTLExpression TRUE = ExpressionFactory.TRUE;
     public static final RTLExpression FALSE = ExpressionFactory.FALSE;
 
     private static final int pc_bit_width = ExpressionFactory.pc.getBitWidth();
 
-    public static StatementSequence translate(ZInstruction instruction)
-    {
+    public static StatementSequence translate(ZInstruction instruction) {
         StatementSequence statementSequence;
 
 //        ZInstructionType type = instruction.getType();
@@ -88,8 +89,10 @@ public class Translator {
 //                statementSequence = translateGeneral(instruction);
 //        }
 
-        switch (instruction.getFormat())
-        {
+        switch (instruction.getFormat()) {
+            case RI:
+                statementSequence = translateRI(instruction);
+                break;
             case RR:
                 statementSequence = translateRR(instruction);
                 break;
@@ -134,8 +137,7 @@ public class Translator {
     }
 
     //set condition code
-    private static void setCC(StatementSequence instrBody)
-    {
+    private static void setCC(StatementSequence instrBody) {
         instrBody.addLast(
                 new AssignmentTemplate(2, cc,
                         ExpressionFactory.createConditionalExpression(ExpressionFactory.createOr(zf, of),
@@ -143,8 +145,7 @@ public class Translator {
                                 ExpressionFactory.createConditionalExpression(nf, cc_value[1], cc_value[2]))));
     }
 
-    private static void setFlags(StatementSequence instrBody)
-    {
+    private static void setFlags(StatementSequence instrBody) {
         instrBody.addLast(new RTLVariableAssignment(zf,
                 ExpressionFactory.createConditionalExpression(
                         ExpressionFactory.createEqual(cc, cc_value[0]), TRUE, FALSE)));
@@ -160,8 +161,7 @@ public class Translator {
     }
 
     private static void addFlagsAssignment(StatementSequence instrBody, RTLExpression result,
-                                           RTLExpression left_operand, RTLExpression right_operand)
-    {
+                                           RTLExpression left_operand, RTLExpression right_operand) {
         instrBody.addLast(new RTLVariableAssignment(zf, ExpressionFactory.createEqual(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createLessThan(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createGreaterThan(result, rtl_number[0])));
@@ -183,8 +183,7 @@ public class Translator {
     }
 
     private static void subtractFlagsAssignment(StatementSequence instrBody, RTLExpression result,
-                                           RTLExpression left_operand, RTLExpression right_operand)
-    {
+                                                RTLExpression left_operand, RTLExpression right_operand) {
         instrBody.addLast(new RTLVariableAssignment(zf, ExpressionFactory.createEqual(left_operand, right_operand)));
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createLessThan(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createGreaterThan(result, rtl_number[0])));
@@ -206,8 +205,7 @@ public class Translator {
     }
 
     private static void subtractLogicalFlagsAssignment(StatementSequence instrBody, RTLExpression result,
-                                                RTLExpression left_operand, RTLExpression right_operand)
-    {
+                                                       RTLExpression left_operand, RTLExpression right_operand) {
         instrBody.addLast(new RTLVariableAssignment(zf, FALSE));
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createUnsignedLessThan(left_operand, right_operand)));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createEqual(left_operand, right_operand)));
@@ -216,8 +214,7 @@ public class Translator {
     }
 
     private static void compareFlagsAssignment(StatementSequence instrBody,
-                                                RTLExpression left_operand, RTLExpression right_operand)
-    {
+                                               RTLExpression left_operand, RTLExpression right_operand) {
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createLessThan(left_operand, right_operand)));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createGreaterThan(left_operand, right_operand)));
         instrBody.addLast(new RTLVariableAssignment(of, FALSE));
@@ -226,8 +223,7 @@ public class Translator {
     }
 
     private static void compareLogicalFlagsAssignment(StatementSequence instrBody,
-                                               RTLExpression left_operand, RTLExpression right_operand)
-    {
+                                                      RTLExpression left_operand, RTLExpression right_operand) {
         instrBody.addLast(new RTLVariableAssignment(zf, ExpressionFactory.createEqual(left_operand, right_operand)));
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createUnsignedLessThan(left_operand, right_operand)));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createUnsignedGreaterThan(left_operand, right_operand)));
@@ -235,8 +231,7 @@ public class Translator {
         setCC(instrBody);
     }
 
-    private static void testFlagsAssignment(StatementSequence instrBody, RTLExpression result)
-    {
+    private static void testFlagsAssignment(StatementSequence instrBody, RTLExpression result) {
         instrBody.addLast(new RTLVariableAssignment(zf, ExpressionFactory.createEqual(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createLessThan(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createGreaterThan(result, rtl_number[0])));
@@ -244,8 +239,7 @@ public class Translator {
         setCC(instrBody);
     }
 
-    private static void logicalFlagsAssignment(StatementSequence instrBody, RTLExpression result)
-    {
+    private static void logicalFlagsAssignment(StatementSequence instrBody, RTLExpression result) {
         RTLNumber zero;
         if (result.getBitWidth() == 8)
             zero = rtl_number_8bit[0];
@@ -261,14 +255,12 @@ public class Translator {
     }
 
     //TODO: Check if this is correct
-    private static void shiftRightFlagsAssignment(StatementSequence instrBody, RTLExpression result)
-    {
+    private static void shiftRightFlagsAssignment(StatementSequence instrBody, RTLExpression result) {
         testFlagsAssignment(instrBody, result);
     }
 
     //TODO: Check if this is correct
-    private static void shiftLeftArithmeticFlagsAssignment(StatementSequence instrBody, RTLExpression result, RTLNumber count)
-    {
+    private static void shiftLeftArithmeticFlagsAssignment(StatementSequence instrBody, RTLExpression result, RTLNumber count) {
         instrBody.addLast(new RTLVariableAssignment(zf, ExpressionFactory.createEqual(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createLessThan(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createGreaterThan(result, rtl_number[0])));
@@ -283,8 +275,7 @@ public class Translator {
     }
 
     //TODO: Check if this is correct
-    private static void shiftLeftLogicalFlagsAssignment(StatementSequence instrBody, RTLExpression result, RTLNumber count)
-    {
+    private static void shiftLeftLogicalFlagsAssignment(StatementSequence instrBody, RTLExpression result, RTLNumber count) {
         instrBody.addLast(new RTLVariableAssignment(zf, ExpressionFactory.createEqual(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(nf, ExpressionFactory.createLessThan(result, rtl_number[0])));
         instrBody.addLast(new RTLVariableAssignment(pf, ExpressionFactory.createGreaterThan(result, rtl_number[0])));
@@ -483,8 +474,35 @@ public class Translator {
 //        instrBody.addLast(zf_assignment);
 //    }
 
-    private static StatementSequence translateRR(ZInstruction instruction)
-    {
+    private static StatementSequence translateRI(ZInstruction instruction) {
+        StatementSequence instructionBody = new StatementSequence();
+
+        ZRegister register = (ZRegister) instruction.getOperand1();
+        RTLVariable register_operand = ExpressionFactory.createVariable(register.toString(), pc_bit_width);
+        Immediate immediate = (Immediate) instruction.getOperand2();
+
+        switch (instruction.getType()) {
+            case Branch: {
+                switch (instruction.getMnemonic()) {
+                    case "JAS":
+                    case "BRAS": {
+                        RTLVariableAssignment register_assignment_statement = new RTLVariableAssignment(register_operand, ExpressionFactory.pc);
+                        instructionBody.addLast(register_assignment_statement);
+
+                        // Subtract 4 from I*2, as pc point after BRAS and BRAS is of lenght 4
+                        RTLNumber immediate_value = ExpressionFactory.createNumber(immediate.getNumber().intValue() * 2 - 4);
+                        RTLExpression branch_target = ExpressionFactory.createPlus(ExpressionFactory.pc, immediate_value);
+                        RTLGoto branch_statement = new RTLGoto(branch_target, RTLGoto.Type.JUMP);
+                        instructionBody.addLast(branch_statement);
+                        break;
+                    }
+                }
+            }
+        }
+        return instructionBody;
+    }
+
+    private static StatementSequence translateRR(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZRegister left_register = (ZRegister) instruction.getOperand1();
@@ -496,59 +514,49 @@ public class Translator {
 
         ZInstructionType type = instruction.getType();
         String mnemonic = instruction.getMnemonic();
-        switch (type)
-        {
-            case Arithmetic:
-            {
+        switch (type) {
+            case Arithmetic: {
                 RTLExpression result = null;
-                switch (mnemonic)
-                {
-                    case "AR":
-                    {
+                switch (mnemonic) {
+                    case "AR": {
                         result = ExpressionFactory.createPlus(left_operand, right_operand);
                         register_assignment_statement = new RTLVariableAssignment(left_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         addFlagsAssignment(instructionBody, result, left_operand, right_operand);
                         break;
                     }
-                    case "CR":
-                    {
+                    case "CR": {
                         compareFlagsAssignment(instructionBody, left_operand, right_operand);
                         break;
                     }
-                    case "LTR":
-                    {
+                    case "LTR": {
                         register_assignment_statement = new RTLVariableAssignment(left_operand, right_operand);
                         instructionBody.addLast(register_assignment_statement);
                         testFlagsAssignment(instructionBody, right_operand);
                         break;
                     }
-                    case "OR":
-                    {
+                    case "OR": {
                         result = ExpressionFactory.createOr(left_operand, right_operand);
                         register_assignment_statement = new RTLVariableAssignment(left_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         logicalFlagsAssignment(instructionBody, result);
                         break;
                     }
-                    case "SLR":
-                    {
+                    case "SLR": {
                         result = ExpressionFactory.createMinus(left_operand, right_operand);
                         register_assignment_statement = new RTLVariableAssignment(left_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         subtractLogicalFlagsAssignment(instructionBody, result, left_operand, right_operand);
                         break;
                     }
-                    case "SR":
-                    {
+                    case "SR": {
                         result = ExpressionFactory.createMinus(left_operand, right_operand);
                         register_assignment_statement = new RTLVariableAssignment(left_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         subtractFlagsAssignment(instructionBody, result, left_operand, right_operand);
                         break;
                     }
-                    case "XR":
-                    {
+                    case "XR": {
                         result = ExpressionFactory.createXor(left_operand, right_operand);
                         register_assignment_statement = new RTLVariableAssignment(left_operand, result);
                         instructionBody.addLast(register_assignment_statement);
@@ -558,17 +566,15 @@ public class Translator {
                 }
                 break;
             }
-            case Branch:
-            {
+            case Branch: {
                 RTLGoto branch_statement = null;
                 RTLExpression branch_condition = null;
                 RTLVariable branch_target = right_operand;
 
                 switch (mnemonic) {
                     case "BASR":
-                    //TODO: when 31-bit AMODE it is wrong semantic for BAL; need to be fixed!
-                    case "BALR":
-                    {
+                        //TODO: when 31-bit AMODE it is wrong semantic for BAL; need to be fixed!
+                    case "BALR": {
                         register_assignment_statement = new RTLVariableAssignment(left_operand, ExpressionFactory.pc);
                         instructionBody.addLast(register_assignment_statement);
 
@@ -579,21 +585,18 @@ public class Translator {
                         }
                         break;
                     }
-                    case "BCTR":
-                    {
+                    case "BCTR": {
                         register_assignment_statement = new RTLVariableAssignment(left_operand,
                                 ExpressionFactory.createMinus(left_operand, rtl_number[1]));
                         instructionBody.addLast(register_assignment_statement);
 
-                        if (right_register.getNumber() != 0)
-                        {
+                        if (right_register.getNumber() != 0) {
                             branch_condition = ExpressionFactory.createNotEqual(left_operand, rtl_number[0]);
                             branch_statement = new RTLGoto(branch_target, branch_condition, RTLGoto.Type.JUMP);
                         }
                         break;
                     }
-                    case "BSM":
-                    {
+                    case "BSM": {
                         RTLBitRange left_operand_bit63 = ExpressionFactory.createBitRange(left_operand, rtl_number[63], rtl_number[63]);
                         RTLBitRange left_operand_bit32 = ExpressionFactory.createBitRange(left_operand, rtl_number[32], rtl_number[32]);
                         RTLBitRange right_operand_bit63 = ExpressionFactory.createBitRange(right_operand, rtl_number[63], rtl_number[63]);
@@ -604,8 +607,7 @@ public class Translator {
 
                         RTLBitRange amode = ExpressionFactory.createBitRange(psw, rtl_number[31], rtl_number[32]);
 
-                        if (left_register.getNumber() != 0)
-                        {
+                        if (left_register.getNumber() != 0) {
                             instructionBody.addLast(new AssignmentTemplate(1, left_operand_bit63,
                                     ExpressionFactory.createConditionalExpression(ExpressionFactory.createEqual(psw_bit31, TRUE),
                                             TRUE, left_operand_bit63)));
@@ -613,12 +615,11 @@ public class Translator {
                                     ExpressionFactory.createConditionalExpression(ExpressionFactory.createEqual(psw_bit31, FALSE),
                                             psw_bit32, left_operand_bit32)));
                         }
-                        if (right_register.getNumber() != 0)
-                        {
+                        if (right_register.getNumber() != 0) {
                             instructionBody.addLast(new AssignmentTemplate(2, amode,
                                     ExpressionFactory.createConditionalExpression(
                                             ExpressionFactory.createEqual(right_operand_bit63, TRUE),
-                                            minus_one.bitExtract(minus_one.getBitWidth() -2, minus_one.getBitWidth() - 1),
+                                            minus_one.bitExtract(minus_one.getBitWidth() - 2, minus_one.getBitWidth() - 1),
                                             ExpressionFactory.createConditionalExpression(
                                                     ExpressionFactory.createEqual(right_operand_bit32, TRUE),
                                                     rtl_number[1].bitExtract(rtl_number[1].getBitWidth() - 2, rtl_number[1].getBitWidth() - 1),
@@ -638,11 +639,9 @@ public class Translator {
             }
             case Move:
             case Store:
-            case Load:
-            {
+            case Load: {
                 switch (mnemonic) {
-                    case "LPDR":
-                    {
+                    case "LPDR": {
                         left_operand = ExpressionFactory.createVariable("FR" + left_register.getNumber(), pc_bit_width);
                         right_operand = ExpressionFactory.createVariable("FR" + right_register.getNumber(), pc_bit_width);
                         //TODO: Check if this is correct
@@ -664,8 +663,7 @@ public class Translator {
                         setCC(instructionBody);
                         break;
                     }
-                    case "LPR":
-                    {
+                    case "LPR": {
                         //TODO: Check if this is correct
                         register_assignment_statement =
                                 new RTLVariableAssignment(left_operand, ExpressionFactory.createConditionalExpression(
@@ -686,8 +684,7 @@ public class Translator {
                         setCC(instructionBody);
                         break;
                     }
-                    case "LR":
-                    {
+                    case "LR": {
                         register_assignment_statement = new RTLVariableAssignment(left_operand, right_operand);
                         instructionBody.addLast(register_assignment_statement);
                         break;
@@ -765,11 +762,9 @@ public class Translator {
 //        return condition;
 //    }
 
-    private static RTLExpression getCondition(ZMask mask)
-    {
+    private static RTLExpression getCondition(ZMask mask) {
         RTLExpression condition;
-        switch (mask.getValue())
-        {
+        switch (mask.getValue()) {
             //Branch (unconditional)
             case 15:
                 condition = TRUE;
@@ -822,8 +817,7 @@ public class Translator {
     }
 
     //special for BCR instruction
-    private static StatementSequence translateRRm(ZInstruction instruction)
-    {
+    private static StatementSequence translateRRm(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZRegister branch_target_register = (ZRegister) instruction.getOperand2();
@@ -840,8 +834,7 @@ public class Translator {
         return instructionBody;
     }
 
-    private static StatementSequence translateRXb(ZInstruction instruction)
-    {
+    private static StatementSequence translateRXb(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZStorageOperand branch_target_operand = (ZStorageOperand) instruction.getOperand2();
@@ -872,8 +865,7 @@ public class Translator {
         return instructionBody;
     }
 
-    private static StatementSequence translateRXa(ZInstruction instruction)
-    {
+    private static StatementSequence translateRXa(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZRegister operand1 = (ZRegister) instruction.getOperand1();
@@ -902,59 +894,49 @@ public class Translator {
         AssignmentTemplate general_assignment_statement;
 
         String mnemonic = instruction.getMnemonic();
-        switch (instruction.getType())
-        {
-            case Arithmetic:
-            {
+        switch (instruction.getType()) {
+            case Arithmetic: {
                 RTLExpression result = null;
-                switch (mnemonic)
-                {
-                    case "A":
-                    {
+                switch (mnemonic) {
+                    case "A": {
                         result = ExpressionFactory.createPlus(register_operand, storage_operand);
                         register_assignment_statement = new RTLVariableAssignment(register_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         addFlagsAssignment(instructionBody, result, register_operand, storage_operand);
                         break;
                     }
-                    case "C":
-                    {
+                    case "C": {
                         compareFlagsAssignment(instructionBody, register_operand, storage_operand);
                         break;
                     }
-                    case "CH":
-                    {
+                    case "CH": {
                         storage_operand = ExpressionFactory.createMemoryLocation(storage_operand_address, 16);
                         compareFlagsAssignment(instructionBody,
                                 ExpressionFactory.createBitRange(register_operand, rtl_number[16], rtl_number[31]), storage_operand);
                         break;
                     }
-                    case "N":
-                    {
+                    case "N": {
                         result = ExpressionFactory.createAnd(register_operand, storage_operand);
                         register_assignment_statement = new RTLVariableAssignment(register_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         logicalFlagsAssignment(instructionBody, result);
                         break;
                     }
-                    case "O":
-                    {
+                    case "O": {
                         result = ExpressionFactory.createOr(register_operand, storage_operand);
                         register_assignment_statement = new RTLVariableAssignment(register_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         logicalFlagsAssignment(instructionBody, result);
                         break;
                     }
-                    case "S":
-                    {
+                    case "S": {
                         result = ExpressionFactory.createMinus(register_operand, storage_operand);
                         register_assignment_statement = new RTLVariableAssignment(register_operand, result);
                         instructionBody.addLast(register_assignment_statement);
                         subtractFlagsAssignment(instructionBody, result, register_operand, storage_operand);
                         break;
                     }
-                    case "X":
-                    {
+                    case "X": {
                         result = ExpressionFactory.createXor(register_operand, storage_operand);
                         register_assignment_statement = new RTLVariableAssignment(register_operand, result);
                         instructionBody.addLast(register_assignment_statement);
@@ -964,17 +946,15 @@ public class Translator {
                 }
                 break;
             }
-            case Branch:
-            {
+            case Branch: {
                 RTLGoto branch_statement = null;
                 RTLExpression branch_condition = null;
                 RTLExpression branch_target = storage_operand_address;
 
                 switch (mnemonic) {
                     case "BAS":
-                    //TODO: when 31-bit AMODE it is wrong semantic for BAL; need to be fixed!
-                    case "BAL":
-                    {
+                        //TODO: when 31-bit AMODE it is wrong semantic for BAL; need to be fixed!
+                    case "BAL": {
                         register_assignment_statement = new RTLVariableAssignment(register_operand, ExpressionFactory.pc);
                         instructionBody.addLast(register_assignment_statement);
 
@@ -1000,11 +980,9 @@ public class Translator {
             }
             case Move:
             case Store:
-            case Load:
-            {
+            case Load: {
                 switch (mnemonic) {
-                    case "IC":
-                    {
+                    case "IC": {
                         general_assignment_statement = new AssignmentTemplate(8,
                                 ExpressionFactory.createBitRange(register_operand, rtl_number[24], rtl_number[31]),
                                 ExpressionFactory.createBitRange(storage_operand, rtl_number[24], rtl_number[31])
@@ -1012,20 +990,17 @@ public class Translator {
                         instructionBody.addLast(general_assignment_statement);
                         break;
                     }
-                    case "LA":
-                    {
+                    case "LA": {
                         register_assignment_statement = new RTLVariableAssignment(register_operand, storage_operand_address);
                         instructionBody.addLast(register_assignment_statement);
                         break;
                     }
-                    case "L":
-                    {
+                    case "L": {
                         register_assignment_statement = new RTLVariableAssignment(register_operand, storage_operand);
                         instructionBody.addLast(register_assignment_statement);
                         break;
                     }
-                    case "LH":
-                    {
+                    case "LH": {
                         RTLMemoryLocation storage_halfword =
                                 ExpressionFactory.createMemoryLocation(storage_operand_address, 16);
                         general_assignment_statement =
@@ -1035,22 +1010,19 @@ public class Translator {
                         instructionBody.addLast(general_assignment_statement);
                         break;
                     }
-                    case "ST":
-                    {
+                    case "ST": {
                         storage_assignment_statement = new RTLMemoryAssignment(storage_operand, register_operand);
                         instructionBody.addLast(storage_assignment_statement);
                         break;
                     }
-                    case "STC":
-                    {
+                    case "STC": {
                         RTLMemoryLocation storage_byte = ExpressionFactory.createMemoryLocation(storage_operand_address, 8);
                         storage_assignment_statement = new RTLMemoryAssignment(storage_byte,
                                 ExpressionFactory.createBitRange(register_operand, rtl_number[24], rtl_number[31]));
                         instructionBody.addLast(storage_assignment_statement);
                         break;
                     }
-                    case "STH":
-                    {
+                    case "STH": {
                         RTLMemoryLocation storage_halfword = ExpressionFactory.createMemoryLocation(storage_operand_address, 16);
                         storage_assignment_statement = new RTLMemoryAssignment(storage_halfword,
                                 ExpressionFactory.createBitRange(register_operand, rtl_number[16], rtl_number[31]));
@@ -1065,8 +1037,7 @@ public class Translator {
     }
 
     //get registers to save/restore (STM, LM)
-    private static ArrayList<ZRegister> getRegistersCyclicRange(ZRegister r_first, ZRegister r_last)
-    {
+    private static ArrayList<ZRegister> getRegistersCyclicRange(ZRegister r_first, ZRegister r_last) {
         ArrayList<ZRegister> destinations = new ArrayList<ZRegister>();
         int r_first_num = r_first.getNumber();
         int r_last_num = r_last.getNumber();
@@ -1086,8 +1057,7 @@ public class Translator {
         return destinations;
     }
 
-    private static StatementSequence translateRSa(ZInstruction instruction)
-    {
+    private static StatementSequence translateRSa(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZRegister operand1 = (ZRegister) instruction.getOperand1();
@@ -1118,32 +1088,25 @@ public class Translator {
         RTLMemoryAssignment storage_assignment_statement = null;
 
         String mnemonic = instruction.getMnemonic();
-        switch (instruction.getType())
-        {
-            case Arithmetic:
-            {
+        switch (instruction.getType()) {
+            case Arithmetic: {
                 break;
             }
-            case Branch:
-            {
+            case Branch: {
                 break;
             }
             case Move:
             case Store:
-            case Load:
-            {
-                switch (mnemonic)
-                {
+            case Load: {
+                switch (mnemonic) {
                     case "LM":
-                    case "STM":
-                    {
+                    case "STM": {
                         ArrayList<ZRegister> registersList = getRegistersCyclicRange(operand1, operand3);
                         RTLMemoryLocation current_storage_operand;
                         RTLVariable current_register_operand;
                         AssignmentTemplate current_assignment_statement;
 
-                        for (ZRegister current_register : registersList)
-                        {
+                        for (ZRegister current_register : registersList) {
                             storage_operand_address = ExpressionFactory.createPlus(storage_operand_address, rtl_number[4]);
                             current_storage_operand = ExpressionFactory.createMemoryLocation(storage_operand_address, 32);
                             current_register_operand = ExpressionFactory.createVariable(current_register.toString(), 32);
@@ -1164,8 +1127,7 @@ public class Translator {
         return instructionBody;
     }
 
-    private static StatementSequence translateRSa2(ZInstruction instruction)
-    {
+    private static StatementSequence translateRSa2(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZRegister register = (ZRegister) instruction.getOperand1();
@@ -1175,11 +1137,9 @@ public class Translator {
         byte displacement = (byte) (shift_operand.getDisplacement() & 0x3f);
         RTLNumber count = ExpressionFactory.createNumber(displacement);
 
-        switch (instruction.getMnemonic())
-        {
+        switch (instruction.getMnemonic()) {
             //TODO: check if this is correct
-            case "SLA":
-            {
+            case "SLA": {
                 RTLVariableAssignment shift_statement =
                         new RTLVariableAssignment(register_operand,
                                 ExpressionFactory.createShiftLeftArithmetic(register_operand, count));
@@ -1188,8 +1148,7 @@ public class Translator {
                 break;
             }
             //TODO: check if this is correct
-            case "SLL":
-            {
+            case "SLL": {
                 RTLVariableAssignment shift_statement =
                         new RTLVariableAssignment(register_operand,
                                 ExpressionFactory.createShiftLeft(register_operand, count));
@@ -1198,8 +1157,7 @@ public class Translator {
                 break;
             }
             //TODO: check if this is correct
-            case "SRA":
-            {
+            case "SRA": {
                 RTLVariableAssignment shift_statement =
                         new RTLVariableAssignment(register_operand,
                                 ExpressionFactory.createShiftRightArithmetic(register_operand, count));
@@ -1208,8 +1166,7 @@ public class Translator {
                 break;
             }
             //TODO: check if this is correct
-            case "SRL":
-            {
+            case "SRL": {
                 RTLVariableAssignment shift_statement =
                         new RTLVariableAssignment(register_operand,
                                 ExpressionFactory.createShiftRight(register_operand, count));
@@ -1221,8 +1178,7 @@ public class Translator {
         return instructionBody;
     }
 
-    private static StatementSequence translateRSb(ZInstruction instruction)
-    {
+    private static StatementSequence translateRSb(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZRegister operand1 = (ZRegister) instruction.getOperand1();
@@ -1258,11 +1214,9 @@ public class Translator {
         AssignmentTemplate assignment_statement;
 
         String mnemonic = instruction.getMnemonic();
-        switch(mnemonic)
-        {
+        switch (mnemonic) {
             case "ICM":
-            case "STCM":
-            {
+            case "STCM": {
                 if ((mask.getValue() & 0x8) == 0x8) {
                     if (mnemonic.equals("ICM"))
                         assignment_statement = new AssignmentTemplate(8, register_bytes[0], storage_bytes[current_byte_index]);
@@ -1300,8 +1254,7 @@ public class Translator {
         return instructionBody;
     }
 
-    private static StatementSequence translateSI(ZInstruction instruction)
-    {
+    private static StatementSequence translateSI(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         Immediate immediate = (Immediate) instruction.getOperand2();
@@ -1321,43 +1274,34 @@ public class Translator {
         RTLMemoryAssignment storage_assignment_statement = null;
 
         String mnemonic = instruction.getMnemonic();
-        switch(instruction.getType())
-        {
-            case Arithmetic:
-            {
+        switch (instruction.getType()) {
+            case Arithmetic: {
                 RTLExpression result;
-                switch (mnemonic)
-                {
-                    case "NI":
-                    {
+                switch (mnemonic) {
+                    case "NI": {
                         result = ExpressionFactory.createAnd(storage_byte, immediate_value);
                         storage_assignment_statement = new RTLMemoryAssignment(storage_byte, result);
                         instructionBody.addLast(storage_assignment_statement);
                         logicalFlagsAssignment(instructionBody, result);
                         break;
                     }
-                    case "OI":
-                    {
+                    case "OI": {
                         result = ExpressionFactory.createOr(storage_byte, immediate_value);
                         storage_assignment_statement = new RTLMemoryAssignment(storage_byte, result);
                         instructionBody.addLast(storage_assignment_statement);
                         logicalFlagsAssignment(instructionBody, result);
                         break;
                     }
-                    case "CLI":
-                    {
+                    case "CLI": {
                         compareLogicalFlagsAssignment(instructionBody, storage_byte, immediate_value);
                         break;
                     }
-                    case "TM":
-                    {
+                    case "TM": {
                         String mask = Integer.toBinaryString(immediate.getNumber().intValue());
                         RTLExpression[] test_results = new RTLExpression[(mask.replaceAll("0", "")).length()];
                         int j = 0;
-                        for (int i = 0; i < 8; i++)
-                        {
-                            if ((immediate.getNumber().intValue() & ((int) Math.pow(2, (7 - i)))) >>> (7 - i) == 1)
-                            {
+                        for (int i = 0; i < 8; i++) {
+                            if ((immediate.getNumber().intValue() & ((int) Math.pow(2, (7 - i)))) >>> (7 - i) == 1) {
                                 test_results[j] = ExpressionFactory.createEqual(
                                         ExpressionFactory.createBitRange(storage_byte, rtl_number[i], rtl_number[i]), TRUE);
                                 j++;
@@ -1383,12 +1327,9 @@ public class Translator {
                 }
                 break;
             }
-            case Move:
-            {
-                switch (mnemonic)
-                {
-                    case "MVI":
-                    {
+            case Move: {
+                switch (mnemonic) {
+                    case "MVI": {
                         storage_assignment_statement = new RTLMemoryAssignment(storage_byte, immediate_value);
                         break;
                     }
@@ -1400,8 +1341,7 @@ public class Translator {
         return instructionBody;
     }
 
-    private static StatementSequence translateSSa(ZInstruction instruction)
-    {
+    private static StatementSequence translateSSa(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZStorageOperand operand1 = (ZStorageOperand) instruction.getOperand1();
@@ -1431,16 +1371,11 @@ public class Translator {
         RTLMemoryAssignment currentByte_assignment_statement;
 
         String mnemonic = instruction.getMnemonic();
-        switch(instruction.getType())
-        {
-            case Move:
-            {
-                switch (mnemonic)
-                {
-                    case "MVC":
-                    {
-                        for (int i = 0; i < length; i++)
-                        {
+        switch (instruction.getType()) {
+            case Move: {
+                switch (mnemonic) {
+                    case "MVC": {
+                        for (int i = 0; i < length; i++) {
                             current_source_byte = ExpressionFactory.createMemoryLocation(storage_operand2_address, 8);
                             current_target_byte = ExpressionFactory.createMemoryLocation(storage_operand1_address, 8);
                             currentByte_assignment_statement = new RTLMemoryAssignment(current_target_byte, current_source_byte);
@@ -1450,13 +1385,11 @@ public class Translator {
                         }
                         break;
                     }
-                    case "CLC":
-                    {
+                    case "CLC": {
                         RTLExpression[] equal_results = new RTLExpression[length];
                         RTLExpression[] lower_results = new RTLExpression[length];
                         RTLExpression[] higher_results = new RTLExpression[length];
-                        for (int i = 0; i < length; i++)
-                        {
+                        for (int i = 0; i < length; i++) {
                             current_source_byte = ExpressionFactory.createMemoryLocation(storage_operand2_address, 8);
                             current_target_byte = ExpressionFactory.createMemoryLocation(storage_operand1_address, 8);
 
@@ -1478,12 +1411,10 @@ public class Translator {
                         setCC(instructionBody);
                         break;
                     }
-                    case "XC":
-                    {
+                    case "XC": {
                         RTLExpression current_result;
                         RTLExpression[] equal_results = new RTLExpression[length];
-                        for (int i = 0; i < length; i++)
-                        {
+                        for (int i = 0; i < length; i++) {
                             current_source_byte = ExpressionFactory.createMemoryLocation(storage_operand2_address, 8);
                             current_target_byte = ExpressionFactory.createMemoryLocation(storage_operand1_address, 8);
 
@@ -1514,13 +1445,11 @@ public class Translator {
         return instructionBody;
     }
 
-    private static StatementSequence translateSSb(ZInstruction instruction)
-    {
+    private static StatementSequence translateSSb(ZInstruction instruction) {
         return null;
     }
 
-    private static StatementSequence translateI(ZInstruction instruction)
-    {
+    private static StatementSequence translateI(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         Immediate immediate = (Immediate) instruction.getOperand1();
@@ -1528,10 +1457,8 @@ public class Translator {
         RTLVariable r1 = ExpressionFactory.createVariable("R1", pc_bit_width);
         RTLVariable r15 = ExpressionFactory.createVariable("R15", pc_bit_width);
 
-        switch (immediate.getNumber().intValue())
-        {
-            case 10:
-            {
+        switch (immediate.getNumber().intValue()) {
+            case 10: {
                 RTLVariable temp = ExpressionFactory.createVariable("temp", 32);
                 instructionBody.addLast(new RTLAlloc(temp, "storage_area_from_GETMAIN" + getmain_storage_count));
                 getmain_storage_count++;
@@ -1546,16 +1473,14 @@ public class Translator {
             case 7:
             case 12:
             case 13:
-            case 16:
-            {
+            case 16: {
                 break;
             }
         }
         return instructionBody;
     }
 
-    private static StatementSequence translateS(ZInstruction instruction)
-    {
+    private static StatementSequence translateS(ZInstruction instruction) {
         StatementSequence instructionBody = new StatementSequence();
 
         ZStorageOperand operand1 = (ZStorageOperand) instruction.getOperand1();
@@ -1567,17 +1492,14 @@ public class Translator {
         if (base_register.getNumber() != 0)
             storage_operand_address = ExpressionFactory.createPlus(storage_operand_address, base);
 
-        switch (instruction.getMnemonic())
-        {
-            case "SPKA":
-            {
+        switch (instruction.getMnemonic()) {
+            case "SPKA": {
                 RTLBitRange psw_key = ExpressionFactory.createBitRange(psw, rtl_number[8], rtl_number[11]);
                 RTLBitRange storage_bits56_59 = ExpressionFactory.createBitRange(storage_operand_address, rtl_number[56], rtl_number[59]);
                 instructionBody.addLast(new AssignmentTemplate(4, psw_key, storage_bits56_59));
                 break;
             }
-            case "SSM":
-            {
+            case "SSM": {
                 RTLBitRange psw_system_mask = ExpressionFactory.createBitRange(psw, rtl_number[0], rtl_number[7]);
                 RTLMemoryLocation storage_byte = ExpressionFactory.createMemoryLocation(storage_operand_address, 8);
                 instructionBody.addLast(new AssignmentTemplate(8, psw_system_mask, storage_byte));

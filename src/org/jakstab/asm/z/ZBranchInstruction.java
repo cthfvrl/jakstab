@@ -33,6 +33,8 @@ package org.jakstab.asm.z;
 import org.jakstab.asm.*;
 import org.jakstab.ssl.Architecture;
 
+import java.time.zone.ZoneRulesException;
+
 public class ZBranchInstruction extends ZInstruction
 implements BranchInstruction {
 
@@ -70,6 +72,14 @@ implements BranchInstruction {
 		super(opcode, op1, op2);
 		ZInstructionFormat format = Architecture.getFormat(opcode);
 		if (!(format == ZInstructionFormat.RRm))
+			throw new Error("Unexpected format of instruction!");
+	}
+
+	public ZBranchInstruction(ZOpcode opcode, ZRegister op1, Immediate op2)
+	{
+		super(opcode, op1, op2);
+		ZInstructionFormat format = Architecture.getFormat(opcode);
+		if (!(format == ZInstructionFormat.RI))
 			throw new Error("Unexpected format of instruction!");
 	}
 

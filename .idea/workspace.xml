@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085cbe71-9d75-4bfc-ad23-6f151452c308" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZBranchInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZBranchInstruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,163 +58,89 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45812395">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Translator.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="65" column="58" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="58" />
-                  <folding>
-                    <element signature="e#2664#2720#0" />
-                    <element signature="e#5010#5501#0" />
-                    <element signature="e#5507#6404#0" />
-                    <element signature="e#6410#8005#0" />
-                    <element signature="e#8011#9614#0" />
-                    <element signature="e#9620#10308#0" />
-                    <element signature="e#10314#10956#0" />
-                    <element signature="e#10962#11626#0" />
-                    <element signature="e#11632#12170#0" />
-                    <element signature="e#12176#12952#0" />
-                    <element signature="e#12958#13151#0" />
-                    <element signature="e#13157#14075#0" />
-                    <element signature="e#14081#14854#0" />
-                    <element signature="e#14856#14955#0" />
-                    <element signature="e#38693#38752#0" />
-                    <element signature="e#40771#42322#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="zArchitecture_formats_and_types.txt" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ZRIDecoder.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ZRIInstruction.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ZSIInstruction.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZSIInstruction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="109">
-                  <caret line="315" selection-start-line="315" selection-end-line="315" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Architecture.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="343">
-                  <caret line="351" selection-start-line="351" selection-end-line="351" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="420" selection-start-line="420" selection-end-line="420" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ProgramGraphWriter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/ProgramGraphWriter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="458" column="13" lean-forward="true" selection-start-line="458" selection-start-column="13" selection-end-line="458" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="ZSIInstruction.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZSIInstruction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ZRRInstruction.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRRInstruction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ZInstructionFormat.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ZSIDecoder.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSIDecoder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ZRRDecoder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRRDecoder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Translator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="491" column="94" selection-start-line="491" selection-start-column="94" selection-end-line="491" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zArchitecture_formats_and_types.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZDisassembler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="440" selection-start-line="440" selection-end-line="440" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControlFlowReconstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/analysis/ControlFlowReconstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="365" selection-start-line="365" selection-end-line="365" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="324" selection-start-line="324" selection-end-line="324" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZInstructionFactoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZBranchInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZBranchInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="80" column="67" lean-forward="true" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Architecture.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="512" selection-start-line="512" selection-end-line="512" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/jakstab/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="407" selection-start-line="407" selection-end-line="407" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -244,6 +171,9 @@
       <find>Control flow from</find>
       <find>Exception on inferring type of first</find>
       <find>getStatement</find>
+      <find>ZOperandsDecoder</find>
+      <find>SI</find>
+      <find>newBranchInstruction</find>
     </findStrings>
     <replaceStrings>
       <replace>destinations</replace>
@@ -264,7 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/jakstab/ssl/parser/SSLPreprocessor.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZStoreInstruction.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZLoadInstruction.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/Program.java" />
@@ -301,20 +230,21 @@
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSSbDecoder.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZIDecoder.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSDecoder.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactory.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstruction.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/Main.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZStorageOperand.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/util/BinaryFileInputBuffer.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/loader/RawModule.java" />
-        <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" />
         <option value="$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java" />
         <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactory.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/asm/z/ZBranchInstruction.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java" />
+        <option value="$PROJECT_DIR$/src/org/jakstab/translator/Translator.java" />
       </list>
     </option>
   </component>
@@ -324,7 +254,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1090" />
@@ -367,6 +297,13 @@
               <item name="jakstab" type="462c0819:PsiDirectoryNode" />
               <item name="disasm" type="462c0819:PsiDirectoryNode" />
               <item name="z" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jakstab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jakstab" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jakstab" type="462c0819:PsiDirectoryNode" />
+              <item name="translator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jakstab" type="b2602c69:ProjectViewProjectNode" />
@@ -903,24 +840,24 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32909605" />
       <window_info anchor="right" id="z/OS" order="5" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.3055118" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4941435" weight="0.30508474" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5058565" side_tool="true" weight="0.3055118" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.10310735" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31920904" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32913387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42372882" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.42372882" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" id="HlasmTools" order="11" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -993,35 +930,17 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java</url>
-          <line>344</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java</url>
-          <line>339</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <condition expression="index == 168" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java</url>
           <line>81</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java</url>
-          <line>351</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1055,21 +974,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JAVA/org.jakstab.asm.Immediate" />
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRSbDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="71" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZSDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="18" column="79" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZIDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1196,13 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/cfa/AsmCFG.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
@@ -1242,13 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1284,20 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="420" selection-start-line="420" selection-end-line="420" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/analysis/ControlFlowReconstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="241" selection-start-line="241" selection-end-line="241" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/analysis/CPAAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1312,27 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="315" selection-start-line="315" selection-end-line="315" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="351" selection-start-line="351" selection-end-line="351" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRSa2Instruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1340,17 +1195,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZOperandsDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZSIInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1363,54 +1218,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="-377">
           <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZOperandsDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="65" column="58" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="58" />
-          <folding>
-            <element signature="e#2664#2720#0" />
-            <element signature="e#5010#5501#0" />
-            <element signature="e#5507#6404#0" />
-            <element signature="e#6410#8005#0" />
-            <element signature="e#8011#9614#0" />
-            <element signature="e#9620#10308#0" />
-            <element signature="e#10314#10956#0" />
-            <element signature="e#10962#11626#0" />
-            <element signature="e#11632#12170#0" />
-            <element signature="e#12176#12952#0" />
-            <element signature="e#12958#13151#0" />
-            <element signature="e#13157#14075#0" />
-            <element signature="e#14081#14854#0" />
-            <element signature="e#14856#14955#0" />
-            <element signature="e#38693#38752#0" />
-            <element signature="e#40771#42322#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRRDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1421,13 +1230,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRRDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZRIInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="51" column="91" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZInstructionFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZOpcode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/util/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#1373#1374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZRIDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zArchitecture_instruction_set/zArchitecture_formats_and_types.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/asm/z/ZBranchInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="80" column="67" lean-forward="true" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/analysis/ControlFlowReconstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="365" selection-start-line="365" selection-end-line="365" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="407" selection-start-line="407" selection-end-line="407" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/disasm/z/ZDisassembler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="440" selection-start-line="440" selection-end-line="440" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="324" selection-start-line="324" selection-end-line="324" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/ssl/Architecture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="512" selection-start-line="512" selection-end-line="512" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jakstab/translator/Translator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="491" column="94" selection-start-line="491" selection-start-column="94" selection-end-line="491" selection-end-column="94" />
         </state>
       </provider>
     </entry>
