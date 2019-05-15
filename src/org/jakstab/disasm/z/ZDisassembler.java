@@ -19,16 +19,16 @@
  * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
  * CA 95054 USA or visit www.sun.com if you need additional information or
  * have any questions.
- *  
+ *
  */
 
 /*
  * JDoc annotations are Copyright 2007-2015 Johannes Kinder
  */
 
-/* 
- * Original code for this class taken from the Java HotSpot VM. 
- * Modified for use with the Jakstab project. All modifications 
+/*
+ * Original code for this class taken from the Java HotSpot VM.
+ * Modified for use with the Jakstab project. All modifications
  * Copyright 2007-2015 Johannes Kinder <jk@jakstab.org>
  */
 
@@ -67,7 +67,7 @@ public class ZDisassembler implements Disassembler {
 	public ZDisassembler(BinaryInputBuffer code) {
 		this(code, new ZInstructionFactoryImpl());
 	}
-	
+
 	@Override
 	public final Instruction decodeInstruction(long index) {
 		Instruction instruction = null;
@@ -391,50 +391,11 @@ public class ZDisassembler implements Disassembler {
 				default:
 					throw new Error("Invalid type of instruction!");
 			}
-
-//			switch (format)
-//			{
-//				case RR:
-//					instruction = new ZRRInstruction(opcode, (ZRegister) operands[0], (ZRegister) operands[1]);
-//					break;
-//				case RRm:
-//					instruction = new ZRRmInstruction(opcode, (ZMask) operands[0], (ZRegister) operands[1]);
-//					break;
-//				case RXa:
-//					instruction = new ZRXaInstruction(opcode, (ZRegister) operands[0], (ZStorageOperand) operands[1]);
-//					break;
-//				case RXb:
-//					instruction = new ZRXbInstruction(opcode, (ZMask) operands[0], (ZStorageOperand) operands[1]);
-//					break;
-//				case RSa:
-//					instruction =
-//							new ZRSaInstruction(opcode, (ZRegister) operands[0], (ZStorageOperand) operands[1], (ZRegister) operands[2]);
-//					break;
-//				case RSa2:
-//					instruction = new ZRSa2Instruction(opcode, (ZRegister) operands[0], (ZStorageOperand) operands[1]);
-//					break;
-//				case RSb:
-//					instruction =
-//							new ZRSbInstruction(opcode, (ZRegister) operands[0], (ZStorageOperand) operands[1], (ZMask) operands[2]);
-//					break;
-//				case SSa:
-//					instruction = new ZSSaInstruction(opcode, (ZStorageOperand) operands[0], (ZStorageOperand) operands[1]);
-//					break;
-//				case SSb:
-//					instruction = new ZSSbInstruction(opcode, (ZStorageOperand) operands[0], (ZStorageOperand) operands[1]);
-//					break;
-//				case SI:
-//					instruction = new ZSIInstruction(opcode, (ZStorageOperand) operands[0], (Immediate) operands[1]);
-//					break;
-//			}
-
-			//len = instrDecoder.getCurrentIndex();
-			//byteIndex = len;
-			//byteIndex = instrDecoder.getCurrentIndex();
-		} catch (Exception exp) {
-			logger.error("Error during disassembly:", exp);
-			if (logger.isInfoEnabled())
-				exp.printStackTrace();
+		} catch (Throwable throwable) {
+			logger.error("Error during disassembly:", throwable);
+			// Debug:
+			//if (logger.isInfoEnabled())
+			//	throwable.printStackTrace();
 			return null;
 		}
 		disassembled_instruction_count++;
